@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Hasaranga/3bit_adder/3bit_adder.srcs/sources_1/new/adder_3bit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity adder_3bit
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Hasaranga/3bit_adder/3bit_adder.srcs/sim_1/new/SIm_3bit_adder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity SIm_3bit_adder
