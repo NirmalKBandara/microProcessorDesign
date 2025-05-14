@@ -1,0 +1,319 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Wed May 14 22:20:38 2025
+# Process ID: 28588
+# Current directory: E:/Vivado project/Register_Bank/Register_Bank.runs/synth_1
+# Command line: vivado.exe -log Register_Bank.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Register_Bank.tcl
+# Log file: E:/Vivado project/Register_Bank/Register_Bank.runs/synth_1/Register_Bank.vds
+# Journal file: E:/Vivado project/Register_Bank/Register_Bank.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Register_Bank.tcl -notrace
+Command: synth_design -top Register_Bank -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 19988 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 435.211 ; gain = 95.367
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Register_Bank' [E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:48]
+INFO: [Synth 8-3491] module 'Decoder_3_to_8' declared at 'E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Decoder_3_to_8.vhd:34' bound to instance 'Decoder_3_to_8_0' of component 'Decoder_3_to_8' [E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:72]
+INFO: [Synth 8-638] synthesizing module 'Decoder_3_to_8' [E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Decoder_3_to_8.vhd:39]
+INFO: [Synth 8-3491] module 'Decorder_2_to_4' declared at 'E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Decoder_2_to_4.vhd:34' bound to instance 'Decorder_2_to_4_0' of component 'Decorder_2_to_4' [E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Decoder_3_to_8.vhd:51]
+INFO: [Synth 8-638] synthesizing module 'Decorder_2_to_4' [E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Decoder_2_to_4.vhd:40]
+INFO: [Synth 8-256] done synthesizing module 'Decorder_2_to_4' (1#1) [E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Decoder_2_to_4.vhd:40]
+INFO: [Synth 8-3491] module 'Decorder_2_to_4' declared at 'E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Decoder_2_to_4.vhd:34' bound to instance 'Decorder_2_to_4_1' of component 'Decorder_2_to_4' [E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Decoder_3_to_8.vhd:57]
+INFO: [Synth 8-256] done synthesizing module 'Decoder_3_to_8' (2#1) [E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Decoder_3_to_8.vhd:39]
+INFO: [Synth 8-3491] module 'Slow_Clk' declared at 'E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Slow_Clk.vhd:34' bound to instance 'Slow_Clk_0' of component 'Slow_Clk' [E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:77]
+INFO: [Synth 8-638] synthesizing module 'Slow_Clk' [E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Slow_Clk.vhd:39]
+INFO: [Synth 8-256] done synthesizing module 'Slow_Clk' (3#1) [E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Slow_Clk.vhd:39]
+INFO: [Synth 8-3491] module 'Reg' declared at 'E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:34' bound to instance 'Reg_0' of component 'Reg' [E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:82]
+INFO: [Synth 8-638] synthesizing module 'Reg' [E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:41]
+INFO: [Synth 8-3491] module 'D_FF' declared at 'E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/D_FF.vhd:34' bound to instance 'D_FF_0' of component 'D_FF' [E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:53]
+INFO: [Synth 8-638] synthesizing module 'D_FF' [E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/D_FF.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'D_FF' (4#1) [E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/D_FF.vhd:41]
+INFO: [Synth 8-3491] module 'D_FF' declared at 'E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/D_FF.vhd:34' bound to instance 'D_FF_1' of component 'D_FF' [E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:59]
+INFO: [Synth 8-3491] module 'D_FF' declared at 'E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/D_FF.vhd:34' bound to instance 'D_FF_2' of component 'D_FF' [E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:65]
+INFO: [Synth 8-3491] module 'D_FF' declared at 'E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/D_FF.vhd:34' bound to instance 'D_FF_3' of component 'D_FF' [E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:72]
+INFO: [Synth 8-256] done synthesizing module 'Reg' (5#1) [E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:41]
+INFO: [Synth 8-3491] module 'Reg' declared at 'E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:34' bound to instance 'Reg_1' of component 'Reg' [E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:89]
+INFO: [Synth 8-3491] module 'Reg' declared at 'E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:34' bound to instance 'Reg_2' of component 'Reg' [E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:96]
+INFO: [Synth 8-3491] module 'Reg' declared at 'E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:34' bound to instance 'Reg_3' of component 'Reg' [E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:103]
+INFO: [Synth 8-3491] module 'Reg' declared at 'E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:34' bound to instance 'Reg_4' of component 'Reg' [E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:110]
+INFO: [Synth 8-3491] module 'Reg' declared at 'E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:34' bound to instance 'Reg_5' of component 'Reg' [E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:117]
+INFO: [Synth 8-3491] module 'Reg' declared at 'E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:34' bound to instance 'Reg_6' of component 'Reg' [E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:124]
+INFO: [Synth 8-3491] module 'Reg' declared at 'E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:34' bound to instance 'Reg_7' of component 'Reg' [E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:131]
+INFO: [Synth 8-256] done synthesizing module 'Register_Bank' (6#1) [E:/Vivado project/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:48]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 490.523 ; gain = 150.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 490.523 ; gain = 150.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 490.523 ; gain = 150.680
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Synth 8-5545] ROM "count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clk_status" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 490.523 ; gain = 150.680
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 34    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module Slow_Clk 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module D_FF 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5545] ROM "Slow_Clk_0/count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "Slow_Clk_0/clk_status" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 627.785 ; gain = 287.941
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 627.785 ; gain = 287.941
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 627.785 ; gain = 287.941
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 627.785 ; gain = 287.941
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 627.785 ; gain = 287.941
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 627.785 ; gain = 287.941
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 627.785 ; gain = 287.941
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 627.785 ; gain = 287.941
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 627.785 ; gain = 287.941
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     2|
+|2     |CARRY4 |     8|
+|3     |LUT3   |     8|
+|4     |LUT4   |     7|
+|5     |LUT5   |     3|
+|6     |LUT6   |     2|
+|7     |FDRE   |    66|
+|8     |IBUF   |     8|
+|9     |OBUF   |    32|
++------+-------+------+
+
+Report Instance Areas: 
++------+----------------------+-------------------+------+
+|      |Instance              |Module             |Cells |
++------+----------------------+-------------------+------+
+|1     |top                   |                   |   136|
+|2     |  Decoder_3_to_8_0    |Decoder_3_to_8     |     7|
+|3     |    Decorder_2_to_4_0 |Decorder_2_to_4    |     3|
+|4     |    Decorder_2_to_4_1 |Decorder_2_to_4_38 |     4|
+|5     |  Reg_0               |Reg                |     5|
+|6     |    D_FF_0            |D_FF_34            |     1|
+|7     |    D_FF_1            |D_FF_35            |     1|
+|8     |    D_FF_2            |D_FF_36            |     2|
+|9     |    D_FF_3            |D_FF_37            |     1|
+|10    |  Reg_1               |Reg_0              |     4|
+|11    |    D_FF_0            |D_FF_30            |     1|
+|12    |    D_FF_1            |D_FF_31            |     1|
+|13    |    D_FF_2            |D_FF_32            |     1|
+|14    |    D_FF_3            |D_FF_33            |     1|
+|15    |  Reg_2               |Reg_1              |     4|
+|16    |    D_FF_0            |D_FF_26            |     1|
+|17    |    D_FF_1            |D_FF_27            |     1|
+|18    |    D_FF_2            |D_FF_28            |     1|
+|19    |    D_FF_3            |D_FF_29            |     1|
+|20    |  Reg_3               |Reg_2              |     4|
+|21    |    D_FF_0            |D_FF_22            |     1|
+|22    |    D_FF_1            |D_FF_23            |     1|
+|23    |    D_FF_2            |D_FF_24            |     1|
+|24    |    D_FF_3            |D_FF_25            |     1|
+|25    |  Reg_4               |Reg_3              |     4|
+|26    |    D_FF_0            |D_FF_18            |     1|
+|27    |    D_FF_1            |D_FF_19            |     1|
+|28    |    D_FF_2            |D_FF_20            |     1|
+|29    |    D_FF_3            |D_FF_21            |     1|
+|30    |  Reg_5               |Reg_4              |     4|
+|31    |    D_FF_0            |D_FF_14            |     1|
+|32    |    D_FF_1            |D_FF_15            |     1|
+|33    |    D_FF_2            |D_FF_16            |     1|
+|34    |    D_FF_3            |D_FF_17            |     1|
+|35    |  Reg_6               |Reg_5              |     4|
+|36    |    D_FF_0            |D_FF_10            |     1|
+|37    |    D_FF_1            |D_FF_11            |     1|
+|38    |    D_FF_2            |D_FF_12            |     1|
+|39    |    D_FF_3            |D_FF_13            |     1|
+|40    |  Reg_7               |Reg_6              |     4|
+|41    |    D_FF_0            |D_FF               |     1|
+|42    |    D_FF_1            |D_FF_7             |     1|
+|43    |    D_FF_2            |D_FF_8             |     1|
+|44    |    D_FF_3            |D_FF_9             |     1|
+|45    |  Slow_Clk_0          |Slow_Clk           |    54|
++------+----------------------+-------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 627.785 ; gain = 287.941
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 627.785 ; gain = 287.941
+Synthesis Optimization Complete : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 627.785 ; gain = 287.941
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 16 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+41 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 726.891 ; gain = 399.012
+INFO: [Common 17-1381] The checkpoint 'E:/Vivado project/Register_Bank/Register_Bank.runs/synth_1/Register_Bank.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Register_Bank_utilization_synth.rpt -pb Register_Bank_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 726.891 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed May 14 22:20:53 2025...
