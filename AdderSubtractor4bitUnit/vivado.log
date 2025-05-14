@@ -1,0 +1,31 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Wed May 14 22:19:19 2025
+# Process ID: 7348
+# Current directory: C:/Users/Nimsika Bosilu/Documents/CODD/Nano Processor Design/AdderSubtractor4bitUnit
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16776 C:\Users\Nimsika Bosilu\Documents\CODD\Nano Processor Design\AdderSubtractor4bitUnit\AdderSubtractor4bitUnit.xpr
+# Log file: C:/Users/Nimsika Bosilu/Documents/CODD/Nano Processor Design/AdderSubtractor4bitUnit/vivado.log
+# Journal file: C:/Users/Nimsika Bosilu/Documents/CODD/Nano Processor Design/AdderSubtractor4bitUnit\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/Nimsika Bosilu/Documents/CODD/Nano Processor Design/AdderSubtractor4bitUnit/AdderSubtractor4bitUnit.xpr}
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'C:/Users/Nimsika Bosilu/Documents/CODD/Nano Processor Design/AdderSubtractor4bitUnit'
+INFO: [Project 1-313] Project file moved from 'C:/Users/Nimsika Bosilu/Documents/CODD/AdderSubtractor4bitUnit' since last save.
+WARNING: [Project 1-312] File not found as 'C:/Users/Nimsika Bosilu/Documents/CODD/Nano Processor Design/Vivado/Lab 03/Lab 03.srcs/sources_1/new/FA.vhd'; using path 'C:/Users/Nimsika Bosilu/Documents/CODD/Vivado/Lab 03/Lab 03.srcs/sources_1/new/FA.vhd' instead.
+WARNING: [Project 1-312] File not found as 'C:/Users/Nimsika Bosilu/Documents/CODD/Nano Processor Design/Vivado/Lab 03/Lab 03.srcs/sources_1/new/HA.vhd'; using path 'C:/Users/Nimsika Bosilu/Documents/CODD/Vivado/Lab 03/Lab 03.srcs/sources_1/new/HA.vhd' instead.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.1/data/ip'.
+open_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:12 . Memory (MB): peak = 895.832 ; gain = 116.457
+update_compile_order -fileset sources_1
+add_files -norecurse -scan_for_includes {{C:/Users/Nimsika Bosilu/Documents/CODD/Vivado/Lab 03/Lab 03.srcs/sources_1/new/HA.vhd} {C:/Users/Nimsika Bosilu/Documents/CODD/Vivado/Lab 03/Lab 03.srcs/sources_1/new/FA.vhd}}
+WARNING: [filemgmt 56-12] File 'C:/Users/Nimsika Bosilu/Documents/CODD/Vivado/Lab 03/Lab 03.srcs/sources_1/new/HA.vhd' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File 'C:/Users/Nimsika Bosilu/Documents/CODD/Vivado/Lab 03/Lab 03.srcs/sources_1/new/FA.vhd' cannot be added to the project because it already exists in the project, skipping this file
+import_files -norecurse {{C:/Users/Nimsika Bosilu/Documents/CODD/Vivado/Lab 03/Lab 03.srcs/sources_1/new/HA.vhd} {C:/Users/Nimsika Bosilu/Documents/CODD/Vivado/Lab 03/Lab 03.srcs/sources_1/new/FA.vhd}}
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed May 14 22:22:09 2025...
