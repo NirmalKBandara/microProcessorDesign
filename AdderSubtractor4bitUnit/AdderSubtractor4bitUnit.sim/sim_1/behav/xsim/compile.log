@@ -1,8 +1,0 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Nimsika Bosilu/Documents/CODD/AdderSubtractor4bitUnit/AdderSubtractor4bitUnit.srcs/sources_1/new/AdderSubtractor4bitUnit.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity AdderSubtractor4bitUnit
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Nimsika Bosilu/Documents/CODD/Vivado/Lab 03/Lab 03.srcs/sources_1/new/FA.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity FA
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Nimsika Bosilu/Documents/CODD/Vivado/Lab 03/Lab 03.srcs/sources_1/new/HA.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity HA
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Nimsika Bosilu/Documents/CODD/AdderSubtractor4bitUnit/AdderSubtractor4bitUnit.srcs/sim_1/new/TB_AdderSubtractor4bitUnit.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity TB_AdderSubtractor4bitUnit
