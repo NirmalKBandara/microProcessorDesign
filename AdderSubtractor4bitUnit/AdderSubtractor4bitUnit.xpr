@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="36" Path="C:/Users/Nimsika Bosilu/Documents/CODD/Nano Processor Design/AdderSubtractor4bitUnit/AdderSubtractor4bitUnit.xpr">
+<Project Version="7" Minor="36" Path="C:/Users/Nimsika Bosilu/Documents/CODD/Nano Processor Design/microProcessorDesign/AdderSubtractor4bitUnit/AdderSubtractor4bitUnit.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="bd28ac342a1645efa7995b9771d5dc2d"/>
@@ -32,7 +32,7 @@
     <Option Name="DSAVendor" Val="xilinx"/>
     <Option Name="DSABoardId" Val="basys3"/>
     <Option Name="DSANumComputeUnits" Val="60"/>
-    <Option Name="WTXSimLaunchSim" Val="1"/>
+    <Option Name="WTXSimLaunchSim" Val="2"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -58,7 +58,7 @@
       <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/sources_1/imports/new/FA.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Vivado/Lab 03/Lab 03.srcs/sources_1/new/FA.vhd"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../Vivado/Lab 03/Lab 03.srcs/sources_1/new/FA.vhd"/>
           <Attr Name="ImportTime" Val="1744277272"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -66,7 +66,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/new/HA.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Vivado/Lab 03/Lab 03.srcs/sources_1/new/HA.vhd"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../Vivado/Lab 03/Lab 03.srcs/sources_1/new/HA.vhd"/>
           <Attr Name="ImportTime" Val="1744277272"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>

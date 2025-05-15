@@ -78,17 +78,17 @@ begin
         ADD_SUB <= '0'; -- Add
         wait for 10 ns;-- 1100
 
-        -- Test case 2: 7 - 3
+        
         A <= "0111"; -- 7
         B <= "0011"; -- 3
         ADD_SUB <= '1'; -- Subtract
-        wait for 10 ns; --0100
+        wait for 10 ns; --1001
 
-        -- Test case 3: 2 - 5 (expect negative)
+       
         A <= "0010"; -- 2
         B <= "0101"; -- 5
         ADD_SUB <= '1'; -- Subtract
-        wait for 10 ns;
+        wait for 10 ns;--1110
 
         -- Test case 4: 8 + 8 (expect overflow)
         A <= "1000"; -- 8
@@ -96,11 +96,11 @@ begin
         ADD_SUB <= '0';
         wait for 10 ns;--0000
 
-        -- Test case 5: 4 - 4 (expect zero)
+        
         A <= "0100"; -- 4
         B <= "0100"; -- 4
         ADD_SUB <= '1';-- Subtract
-        wait for 10 ns; --0000
+        wait for 10 ns; --1100
 
         wait; -- Stop simulation
     end process;

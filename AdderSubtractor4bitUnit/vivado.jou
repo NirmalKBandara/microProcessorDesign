@@ -2,15 +2,16 @@
 # Vivado v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Wed May 14 22:19:19 2025
-# Process ID: 7348
-# Current directory: C:/Users/Nimsika Bosilu/Documents/CODD/Nano Processor Design/AdderSubtractor4bitUnit
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16776 C:\Users\Nimsika Bosilu\Documents\CODD\Nano Processor Design\AdderSubtractor4bitUnit\AdderSubtractor4bitUnit.xpr
-# Log file: C:/Users/Nimsika Bosilu/Documents/CODD/Nano Processor Design/AdderSubtractor4bitUnit/vivado.log
-# Journal file: C:/Users/Nimsika Bosilu/Documents/CODD/Nano Processor Design/AdderSubtractor4bitUnit\vivado.jou
+# Start of session at: Thu May 15 09:31:41 2025
+# Process ID: 14792
+# Current directory: C:/Users/Nimsika Bosilu/Documents/CODD/Nano Processor Design/microProcessorDesign/AdderSubtractor4bitUnit
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13196 C:\Users\Nimsika Bosilu\Documents\CODD\Nano Processor Design\microProcessorDesign\AdderSubtractor4bitUnit\AdderSubtractor4bitUnit.xpr
+# Log file: C:/Users/Nimsika Bosilu/Documents/CODD/Nano Processor Design/microProcessorDesign/AdderSubtractor4bitUnit/vivado.log
+# Journal file: C:/Users/Nimsika Bosilu/Documents/CODD/Nano Processor Design/microProcessorDesign/AdderSubtractor4bitUnit\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project {C:/Users/Nimsika Bosilu/Documents/CODD/Nano Processor Design/AdderSubtractor4bitUnit/AdderSubtractor4bitUnit.xpr}
+open_project {C:/Users/Nimsika Bosilu/Documents/CODD/Nano Processor Design/microProcessorDesign/AdderSubtractor4bitUnit/AdderSubtractor4bitUnit.xpr}
 update_compile_order -fileset sources_1
-add_files -norecurse -scan_for_includes {{C:/Users/Nimsika Bosilu/Documents/CODD/Vivado/Lab 03/Lab 03.srcs/sources_1/new/HA.vhd} {C:/Users/Nimsika Bosilu/Documents/CODD/Vivado/Lab 03/Lab 03.srcs/sources_1/new/FA.vhd}}
-import_files -norecurse {{C:/Users/Nimsika Bosilu/Documents/CODD/Vivado/Lab 03/Lab 03.srcs/sources_1/new/HA.vhd} {C:/Users/Nimsika Bosilu/Documents/CODD/Vivado/Lab 03/Lab 03.srcs/sources_1/new/FA.vhd}}
+launch_simulation
+source TB_AdderSubtractor4bitUnit.tcl
+close_sim
