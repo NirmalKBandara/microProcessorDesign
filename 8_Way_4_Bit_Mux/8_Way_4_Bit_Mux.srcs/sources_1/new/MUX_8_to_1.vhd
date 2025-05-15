@@ -2,6 +2,7 @@
 -- Company: 
 -- Engineer: 
 -- 
+-- Create Date: 09.03.2025 18:41:31
 -- Design Name: 
 -- Module Name: Mux_8_to_1 - Behavioral
 -- Project Name: 
@@ -60,5 +61,6 @@ Y <= EN AND ((D(0) AND Y0(0))
          OR (D(5) AND Y0(5))
          OR (D(6) AND Y0(6)) 
          OR (D(7) AND Y0(7))); 
+
 
 end Behavioral;

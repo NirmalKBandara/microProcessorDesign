@@ -2,7 +2,7 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 10.05.2025 09:42:39
+-- Create Date: 06.03.2025 23:00:15
 -- Design Name: 
 -- Module Name: Decoder_3_to_8 - Behavioral
 -- Project Name: 
@@ -34,29 +34,44 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity Decoder_3_to_8 is
     Port ( I : in STD_LOGIC_VECTOR (2 downto 0);
            EN : in STD_LOGIC;
-           Y : out STD_LOGIC_VECTOR (7 downto 0));
+           Y : out STD_LOGIC_VECTOR (7 downto 0)
+           );
 end Decoder_3_to_8;
 
 architecture Behavioral of Decoder_3_to_8 is
 component Decoder_2_to_4
-    port( I : in STD_LOGIC_VECTOR (1 downto 0);
-          EN : in STD_LOGIC;
-          Y : out STD_LOGIC_VECTOR (3 downto 0));
+    port(
+    I: in std_logic_vector;
+    EN: in std_logic;
+    Y: out std_logic_vector
+    );
 end component;
-SIGNAL EN_0, EN_1 : STD_LOGIC;
+signal I0, I1 : std_logic_vector (1 downto 0);
+signal Y0, Y1 : std_logic_vector (3 downto 0);
+signal EN0, EN1, I2 : std_logic;
+
 begin
-
 Decoder_2_to_4_0 : Decoder_2_to_4
-        PORT map( I => I(1 downto 0) ,
-                  EN => EN_0,
-                  Y => Y(3 downto 0));
-              
+    port map(
+        I => I0,
+        EN => EN0,
+        Y => Y0
+            );
 Decoder_2_to_4_1 : Decoder_2_to_4
-        PORT map( I => I(1 downto 0),
-                  EN => EN_1,
-                  Y => Y(7 downto 4));
-
-    EN_0 <= EN AND NOT(I(2));
-    EN_1 <= EN AND I(2);
+    port map(
+        I => I1,
+        EN => EN1,
+        Y => Y1
+            );
+    
+    EN0 <= NOT(I2) AND EN;
+    EN1 <= I2 AND EN;
+    
+    I0 <= I(1 downto 0);
+    I1 <= I(1 downto 0);
+    I2 <= I(2);
+    
+    Y(3 downto 0) <= Y0;
+    Y(7 downto 4) <= Y1;
     
 end Behavioral;

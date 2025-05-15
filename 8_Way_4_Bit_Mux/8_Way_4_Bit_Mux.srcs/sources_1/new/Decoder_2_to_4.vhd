@@ -2,7 +2,7 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 10.05.2025 09:32:08
+-- Create Date: 06.03.2025 16:14:10
 -- Design Name: 
 -- Module Name: Decoder_2_to_4 - Behavioral
 -- Project Name: 
@@ -40,10 +40,9 @@ end Decoder_2_to_4;
 architecture Behavioral of Decoder_2_to_4 is
 
 begin
-
 Y(0) <= EN AND NOT(I(0)) AND NOT(I(1));
 Y(1) <= EN AND I(0) AND NOT(I(1));
 Y(2) <= EN AND NOT(I(0)) AND I(1);
 Y(3) <= EN AND I(0) AND I(1);
-
+ 
 end Behavioral;
