@@ -1,0 +1,22 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Fri May 16 20:23:18 2025
+# Process ID: 58696
+# Current directory: E:/Vivado project/Nano_Processor
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent29560 E:\Vivado project\Nano_Processor\Nano_Processor.xpr
+# Log file: E:/Vivado project/Nano_Processor/vivado.log
+# Journal file: E:/Vivado project/Nano_Processor\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {E:/Vivado project/Nano_Processor/Nano_Processor.xpr}
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2018.1/data/ip'.
+open_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 994.070 ; gain = 221.566
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri May 16 20:24:15 2025...

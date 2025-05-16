@@ -1,0 +1,12 @@
+
+{ 
+    crc :  3205960141276339570  , 
+    ccp_crc :  0  , 
+    cmdline : " -wto 92a02db8c0a24dd0b5f9136d5973f861 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L secureip --snapshot SIM_Register_Bank_func_impl xil_defaultlib.SIM_Register_Bank xil_defaultlib.glbl" , 
+    buildDate : "Apr  4 2018" , 
+    buildTime : "19:30:32" , 
+    linkCmd : "D:\\Xilinx\\Vivado\\2018.1\\data\\..\\tps\\mingw\\6.2.0\\win64.o\\nt\\bin\\gcc.exe -Wa,-W  -O -Wl,--stack,104857600 -o \"xsim.dir/SIM_Register_Bank_func_impl/xsimk.exe\"   \"xsim.dir/SIM_Register_Bank_func_impl/obj/xsim_0.win64.obj\" \"xsim.dir/SIM_Register_Bank_func_impl/obj/xsim_1.win64.obj\" \"D:\\Xilinx\\Vivado\\2018.1\\lib\\win64.o\\\\librdi_simulator_kernel.dll\"  \"D:\\Xilinx\\Vivado\\2018.1\\lib\\win64.o\\\\librdi_simbridge_kernel.dll\"" , 
+    aggregate_nets : 
+    [ 
+    ] 
+} 
