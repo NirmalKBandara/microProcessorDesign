@@ -8,9 +8,9 @@
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
--- Description: 
+-- Description: A simple 4-bit register with clock and enable input.
 -- 
--- Dependencies: 
+-- Dependencies: None
 -- 
 -- Revision:
 -- Revision 0.01 - File Created
@@ -18,25 +18,16 @@
 -- 
 ----------------------------------------------------------------------------------
 
-
+-- Include standard logic library
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 -- Entity declaration for a 4-bit Register
 entity Reg is
     Port ( 
         D   : in STD_LOGIC_VECTOR (3 downto 0);  -- 4-bit data input
-        EN  : in STD_LOGIC;                      -- Enable signal
-        Clk : in STD_LOGIC;                      -- Clock signal
+        EN  : in STD_LOGIC;                      -- Enable signal (active high)
+        Clk : in STD_LOGIC;                      -- Clock signal (positive edge triggered)
         Q   : out STD_LOGIC_VECTOR (3 downto 0)  -- 4-bit data output
     );
 end Reg;
@@ -44,19 +35,24 @@ end Reg;
 -- Behavioral architecture of the 4-bit Register
 architecture Behavioral of Reg is
 
-signal Q_reg : STD_LOGIC_VECTOR(3 downto 0):=(Others => '0');
+    -- Internal signal to hold the output value
+    signal Q_reg : STD_LOGIC_VECTOR(3 downto 0) := (others => '0');  -- Initialized to 0000
 
 begin
-    
-    process(Clk) begin
-        if(rising_edge(Clk)) then
+
+    -- Process triggered on rising edge of the clock
+    process(Clk) 
+    begin
+        -- Check for rising edge of the clock
+        if rising_edge(Clk) then
+            -- Load input D into register only if enable signal is high
             if (EN = '1') then
                 Q_reg <= D;
             end if;
         end if;
     end process;
 
+    -- Assign internal register value to output
     Q <= Q_reg;
+
 end Behavioral;
-
-

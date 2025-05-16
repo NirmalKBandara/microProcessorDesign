@@ -8,9 +8,9 @@
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
--- Description: 
+-- Description: A simplified 4-bit Nano Processor implementation using structural VHDL
 -- 
--- Dependencies: 
+-- Dependencies: Requires multiple submodules like Register_Bank, ALU, MUXes, etc.
 -- 
 -- Revision:
 -- Revision 0.01 - File Created
@@ -18,172 +18,161 @@
 -- 
 ----------------------------------------------------------------------------------
 
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
+-- Entity declaration for the Nano Processor
 entity Nano_Processor is
     Port (
-        Res, Clk :in STD_LOGIC;
-        Reg_7_out   : out STD_LOGIC_VECTOR (3 downto 0);
-        OverFlow, Zero: out STD_LOGIC;
-        Display_7_Segment: out STD_LOGIC_VECTOR(6 downto 0);
-        an: out STD_LOGIC_VECTOR(3 downto 0));
+        Res, Clk : in STD_LOGIC;                           -- Reset and Clock inputs
+        Reg_7_out   : out STD_LOGIC_VECTOR (3 downto 0);   -- Output of Register 7
+        OverFlow, Zero: out STD_LOGIC;                     -- ALU status flags
+        Display_7_Segment: out STD_LOGIC_VECTOR(6 downto 0); -- Output to 7-segment display
+        an: out STD_LOGIC_VECTOR(3 downto 0)               -- Anode control for 7-segment display
+    );
 end Nano_Processor;
 
 architecture Behavioral of Nano_Processor is
 
+    -- Register bank: 8 registers, 4-bit wide
     component Register_Bank
         Port ( 
-            Reg_EN      : in STD_LOGIC_VECTOR (2 downto 0);  -- 3-bit input to select which register to enable
-            Clk         : in STD_LOGIC;                      -- Clock signal
-            D           : in STD_LOGIC_VECTOR (3 downto 0);  -- 4-bit data input
-            Res         : in STD_LOGIC;                      -- Reset signal for all registers
-            Reg_0_out   : out STD_LOGIC_VECTOR (3 downto 0); -- Output of Register 0
-            Reg_1_out   : out STD_LOGIC_VECTOR (3 downto 0); -- Output of Register 1
-            Reg_2_out   : out STD_LOGIC_VECTOR (3 downto 0); -- Output of Register 2
-            Reg_3_out   : out STD_LOGIC_VECTOR (3 downto 0); -- Output of Register 3
-            Reg_4_out   : out STD_LOGIC_VECTOR (3 downto 0); -- Output of Register 4
-            Reg_5_out   : out STD_LOGIC_VECTOR (3 downto 0); -- Output of Register 5
-            Reg_6_out   : out STD_LOGIC_VECTOR (3 downto 0); -- Output of Register 6
-            Reg_7_out   : out STD_LOGIC_VECTOR (3 downto 0)  -- Output of Register 7
+            Reg_EN      : in STD_LOGIC_VECTOR (2 downto 0);  
+            Clk         : in STD_LOGIC;
+            D           : in STD_LOGIC_VECTOR (3 downto 0);
+            Res         : in STD_LOGIC;
+            Reg_0_out, Reg_1_out, Reg_2_out, Reg_3_out : out STD_LOGIC_VECTOR (3 downto 0);
+            Reg_4_out, Reg_5_out, Reg_6_out, Reg_7_out : out STD_LOGIC_VECTOR (3 downto 0)
        );
     end component;
-    
+
+    -- ALU: 4-bit Adder/Subtractor
     component AdderSubtractor4bitUnit
         Port (
-            A        : in  STD_LOGIC_VECTOR(3 downto 0);
-            B        : in  STD_LOGIC_VECTOR(3 downto 0);
+            A, B     : in  STD_LOGIC_VECTOR(3 downto 0);
             ADD_SUB  : in  STD_LOGIC;
             RESULT   : out STD_LOGIC_VECTOR(3 downto 0);
             OVERFLOW : out STD_LOGIC;
             ZERO     : out STD_LOGIC
         );
     end component;
-    
+
+    -- 2-to-1 multiplexer for 4-bit data
     component Mux_2_Way_4_Bit
         Port (
-            A : in STD_LOGIC_VECTOR (3 downto 0); -- 4-bit input A
-            B : in STD_LOGIC_VECTOR (3 downto 0); -- 4-bit input B
-            S : in STD_LOGIC;                     -- Select signal
-            Y : out STD_LOGIC_VECTOR (3 downto 0) -- 4-bit output Y
+            A, B : in STD_LOGIC_VECTOR (3 downto 0);
+            S   : in STD_LOGIC;
+            Y   : out STD_LOGIC_VECTOR (3 downto 0)
         );
     end component;
-    
+
+    -- 2-to-1 multiplexer for 3-bit addresses
     component Mux_2_Way_3_Bit
         Port (
-            A : in STD_LOGIC_VECTOR (2 downto 0);  -- 3-bit input A
-            B : in STD_LOGIC_VECTOR (2 downto 0);  -- 3-bit input B
-            S : in STD_LOGIC;                      -- Select signal
-            Y : out STD_LOGIC_VECTOR (2 downto 0)  -- 3-bit output
+            A, B : in STD_LOGIC_VECTOR (2 downto 0);
+            S   : in STD_LOGIC;
+            Y   : out STD_LOGIC_VECTOR (2 downto 0)
         );
     end component;
-    
+
+    -- 8-to-1 multiplexer for selecting one of 8 registers
     component Mux_8_Way_4_Bit
         Port ( 
-            I0 : in STD_LOGIC_VECTOR (3 downto 0);  -- Input 0
-            I1 : in STD_LOGIC_VECTOR (3 downto 0);  -- Input 1
-            I2 : in STD_LOGIC_VECTOR (3 downto 0);  -- Input 2
-            I3 : in STD_LOGIC_VECTOR (3 downto 0);  -- Input 3
-            I4 : in STD_LOGIC_VECTOR (3 downto 0);  -- Input 4
-            I5 : in STD_LOGIC_VECTOR (3 downto 0);  -- Input 5
-            I6 : in STD_LOGIC_VECTOR (3 downto 0);  -- Input 6
-            I7 : in STD_LOGIC_VECTOR (3 downto 0);  -- Input 7
-            S  : in STD_LOGIC_VECTOR (2 downto 0);  -- 3-bit select signal
-            Y  : out STD_LOGIC_VECTOR (3 downto 0)  -- Output
+            I0, I1, I2, I3, I4, I5, I6, I7 : in STD_LOGIC_VECTOR (3 downto 0);
+            S  : in STD_LOGIC_VECTOR (2 downto 0);
+            Y  : out STD_LOGIC_VECTOR (3 downto 0)
         );
-   end component;
-   
-   component InstructionDecoder
+    end component;
+
+    -- Instruction decoder: decodes 12-bit instruction to control signals
+    component InstructionDecoder
        Port (
-        InstructionBus : in STD_LOGIC_VECTOR (11 downto 0);    -- 12-bit instruction input
-        RegisterCheck : in STD_LOGIC_VECTOR (3 downto 0);      -- 4-bit input for register condition checking
-        Reg_EN : out STD_LOGIC_VECTOR (2 downto 0);       -- 3-bit output for register select 1
-        RegSelect_A : out STD_LOGIC_VECTOR (2 downto 0);       -- 3-bit output for register select 2
-        RegSelect_B : out STD_LOGIC_VECTOR (2 downto 0);       -- 3-bit output for register select 3
-        LoadSelect : out STD_LOGIC;                             -- Control signal for load selection
-        ImmediateValue : out STD_LOGIC_VECTOR (3 downto 0);     -- 4-bit immediate value output
-        OperationSelect : out STD_LOGIC;                        -- Control signal for operation selection
-        JumpFlag: out STD_LOGIC;                               -- Flag indicating if jump instruction is active
-        JumpAddress: out STD_LOGIC_VECTOR(2 downto 0)           -- 3-bit jump address output
+            InstructionBus  : in STD_LOGIC_VECTOR (11 downto 0);
+            RegisterCheck   : in STD_LOGIC_VECTOR (3 downto 0);
+            Reg_EN          : out STD_LOGIC_VECTOR (2 downto 0);
+            RegSelect_A     : out STD_LOGIC_VECTOR (2 downto 0);
+            RegSelect_B     : out STD_LOGIC_VECTOR (2 downto 0);
+            LoadSelect      : out STD_LOGIC;
+            ImmediateValue  : out STD_LOGIC_VECTOR (3 downto 0);
+            OperationSelect : out STD_LOGIC;
+            JumpFlag        : out STD_LOGIC;
+            JumpAddress     : out STD_LOGIC_VECTOR(2 downto 0)
       );
     end component;
-    
+
+    -- Program Counter: holds current instruction address
     component ProgramCounter
         Port (
-            Clk_in  : in STD_LOGIC;                       -- Clock input
-            Res     : in STD_LOGIC;                       -- Reset signal (active high)
-            NextVal : in STD_LOGIC_VECTOR (2 downto 0);   -- Next value to load
-            Q       : out STD_LOGIC_VECTOR (2 downto 0)   -- Current PC value
+            Clk_in  : in STD_LOGIC;
+            Res     : in STD_LOGIC;
+            NextVal : in STD_LOGIC_VECTOR (2 downto 0);
+            Q       : out STD_LOGIC_VECTOR (2 downto 0)
         );
     end component;
-    
+
+    -- Clock divider to slow down clock signal
     component Slow_Clk
-        Port ( Clk_in : in STD_LOGIC;        -- Input clock signal
-               Clk_out : out STD_LOGIC);     -- Output clock signal
-    end component;    
-    
-    component adder_3bit
-        Port ( INPUT : in STD_LOGIC_VECTOR (2 downto 0);   -- 3-bit input vector
-               OUTPUT : out STD_LOGIC_VECTOR (2 downto 0)  -- 3-bit output vector (result of input + 1)
+        Port (
+            Clk_in  : in STD_LOGIC;
+            Clk_out : out STD_LOGIC
         );
     end component;
-    
+
+    -- Adds 1 to 3-bit input (used for next instruction address)
+    component adder_3bit
+        Port (
+            INPUT  : in STD_LOGIC_VECTOR (2 downto 0);
+            OUTPUT : out STD_LOGIC_VECTOR (2 downto 0)
+        );
+    end component;
+
+    -- ROM: instruction memory
     component program_rom
         Port ( 
-            address : in STD_LOGIC_VECTOR (2 downto 0);      -- 3-bit address input
-            instruction : out STD_LOGIC_VECTOR (11 downto 0) -- 12-bit instruction output
+            address     : in STD_LOGIC_VECTOR (2 downto 0);
+            instruction : out STD_LOGIC_VECTOR (11 downto 0)
         );
     end component;
-    
+
+    -- Lookup table to convert 4-bit value to 7-segment display pattern
     component LUT_16_7
-        Port ( address : in STD_LOGIC_VECTOR (3 downto 0);
-               data : out STD_LOGIC_VECTOR (6 downto 0));
+        Port ( 
+            address : in STD_LOGIC_VECTOR (3 downto 0);
+            data    : out STD_LOGIC_VECTOR (6 downto 0)
+        );
     end component;
-    
-    signal Clk_out,Jump_Flag, LoadSelect, OperationSelect, write_enable : STD_LOGIC;  
-    signal Instruction_Bus_1: STD_LOGIC_VECTOR(11 downto 0);
-    signal Next_Rom_Address, Rom_Address_Add,Rom_Address,Jump_Address,Reg_EN,RegSelect_A,RegSelect_B: STD_LOGIC_VECTOR(2 downto 0);
-    signal Reg_A,Reg_B, ImmediateValue, Result,Value, Reg_0,Reg_1,Reg_2,Reg_3,Reg_4,Reg_5,Reg_6,Reg_7 : STD_LOGIC_VECTOR(3 downto 0);
+
+    -- Internal signals
+    signal Clk_out, Jump_Flag, LoadSelect, OperationSelect, write_enable : STD_LOGIC;
+    signal Instruction_Bus_1 : STD_LOGIC_VECTOR(11 downto 0);
+    signal Next_Rom_Address, Rom_Address_Add, Rom_Address, Jump_Address : STD_LOGIC_VECTOR(2 downto 0);
+    signal Reg_EN, RegSelect_A, RegSelect_B : STD_LOGIC_VECTOR(2 downto 0);
+    signal Reg_A, Reg_B, ImmediateValue, Result, Value : STD_LOGIC_VECTOR(3 downto 0);
+    signal Reg_0, Reg_1, Reg_2, Reg_3, Reg_4, Reg_5, Reg_6, Reg_7 : STD_LOGIC_VECTOR(3 downto 0);
+
 begin
+
+    -- Slow clock generator
     Slow_Clk_0: Slow_Clk
-    port map(
-        Clk_in => Clk,
-        Clk_out => Clk_out);
-    
+    port map(Clk_in => Clk, Clk_out => Clk_out);
+
+    -- Program counter
     Program_Counter: ProgramCounter
-    port map(
-        Clk_in => Clk_out,
-        Res => Res,
-        NextVal => Next_Rom_Address,
-        Q => Rom_Address);
-   
+    port map(Clk_in => Clk_out, Res => Res, NextVal => Next_Rom_Address, Q => Rom_Address);
+
+    -- PC + 1 adder
     Adder_3_Bit: adder_3bit
-    port map(
-        INPUT => Rom_Address,
-        OUTPUT => Rom_Address_Add);
-    
+    port map(INPUT => Rom_Address, OUTPUT => Rom_Address_Add);
+
+    -- Select between jump address and next address
     Mux_2_Way_3_Bit_0: Mux_2_Way_3_Bit
-    port map(
-        A => Jump_Address,
-        B => Rom_Address_Add,
-        S => Jump_Flag,
-        Y => Next_Rom_Address);
-        
+    port map(A => Jump_Address, B => Rom_Address_Add, S => Jump_Flag, Y => Next_Rom_Address);
+
+    -- Fetch instruction from ROM
     Program_Rom_0: Program_Rom
-    port map(
-        address => Rom_Address,
-        Instruction => Instruction_Bus_1);
-    
+    port map(address => Rom_Address, Instruction => Instruction_Bus_1);
+
+    -- Instruction decoder
     Instruction_Decoder: InstructionDecoder
     port map(
         InstructionBus => Instruction_Bus_1,
@@ -196,71 +185,47 @@ begin
         OperationSelect => OperationSelect,
         JumpFlag => Jump_Flag,
         JumpAddress => Jump_Address);
-   
+
+    -- Register bank
     Register_Bank_0: Register_Bank
     port map(
         Reg_EN => Reg_EN,
         Clk => Clk_out,
         D => Value,
         Res => Res,
-        Reg_0_out => Reg_0,
-        Reg_1_out => Reg_1,
-        Reg_2_out => Reg_2,
-        Reg_3_out => Reg_3,
-        Reg_4_out => Reg_4,
-        Reg_5_out => Reg_5,
-        Reg_6_out => Reg_6,
-        Reg_7_out => Reg_7);
-    
+        Reg_0_out => Reg_0, Reg_1_out => Reg_1, Reg_2_out => Reg_2, Reg_3_out => Reg_3,
+        Reg_4_out => Reg_4, Reg_5_out => Reg_5, Reg_6_out => Reg_6, Reg_7_out => Reg_7);
+
+    -- Select between ALU result and immediate value
     Mux_2_Way_4_Bit_0: Mux_2_Way_4_Bit
-    port map(
-        A => Result ,
-        B => ImmediateValue,
-        S => LoadSelect,
-        Y => Value);
-   
+    port map(A => Result, B => ImmediateValue, S => LoadSelect, Y => Value);
+
+    -- Select register A
     Mux_8_Way_4_Bit_0: Mux_8_Way_4_Bit
     port map(
-        I0 => Reg_0,
-        I1 => Reg_1,
-        I2 => Reg_2,
-        I3 => Reg_3,
-        I4 => Reg_4,
-        I5 => Reg_5,
-        I6 => Reg_6,
-        I7 => Reg_7,
-        S => RegSelect_A,
-        Y => Reg_A);
-        
+        I0 => Reg_0, I1 => Reg_1, I2 => Reg_2, I3 => Reg_3,
+        I4 => Reg_4, I5 => Reg_5, I6 => Reg_6, I7 => Reg_7,
+        S => RegSelect_A, Y => Reg_A);
+
+    -- Select register B
     Mux_8_Way_4_Bit_1: Mux_8_Way_4_Bit
-        port map(
-            I0 => Reg_0,
-            I1 => Reg_1,
-            I2 => Reg_2,
-            I3 => Reg_3,
-            I4 => Reg_4,
-            I5 => Reg_5,
-            I6 => Reg_6,
-            I7 => Reg_7,
-            S => RegSelect_B,
-            Y => Reg_B);
-            
+    port map(
+        I0 => Reg_0, I1 => Reg_1, I2 => Reg_2, I3 => Reg_3,
+        I4 => Reg_4, I5 => Reg_5, I6 => Reg_6, I7 => Reg_7,
+        S => RegSelect_B, Y => Reg_B);
+
+    -- ALU: 4-bit add/subtract
     Adder_Substractor_4BitUnit: AdderSubtractor4bitUnit
     port map(
-        A => Reg_A,
-        B => Reg_B,
-        ADD_SUB => OperationSelect,
-        Result => Result,
-        OverFlow => OverFlow,
-        ZERO => Zero); 
-            
-             
+        A => Reg_A, B => Reg_B, ADD_SUB => OperationSelect,
+        Result => Result, OverFlow => OverFlow, ZERO => Zero);
+
+    -- Output Register 7 to 7-segment decoder
     LUT_16_7_0: LUT_16_7
-    port map(
-        address => Reg_7,
-        data => Display_7_Segment);
-        
-   Reg_7_out <= Reg_7;
-   an <= "1110";
-     
+    port map(address => Reg_7, data => Display_7_Segment);
+
+    -- Output assignments
+    Reg_7_out <= Reg_7;
+    an <= "1110"; -- Enables only the first digit of 7-segment (active low)
+
 end Behavioral;

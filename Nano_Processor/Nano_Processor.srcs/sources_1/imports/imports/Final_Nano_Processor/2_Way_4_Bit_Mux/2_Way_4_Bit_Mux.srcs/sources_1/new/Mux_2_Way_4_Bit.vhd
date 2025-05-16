@@ -8,9 +8,9 @@
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
--- Description: 
+-- Description: 2-Way 4-Bit Multiplexer. Outputs A if select is '1', else outputs B.
 -- 
--- Dependencies: 
+-- Dependencies: None
 -- 
 -- Revision:
 -- Revision 0.01 - File Created
@@ -18,18 +18,9 @@
 -- 
 ----------------------------------------------------------------------------------
 
-
+-- Include standard logic library
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 -- Entity declaration for 2-way 4-bit Multiplexer
 entity Mux_2_Way_4_Bit is
@@ -41,12 +32,12 @@ entity Mux_2_Way_4_Bit is
     );
 end Mux_2_Way_4_Bit;
 
+-- Behavioral architecture of the multiplexer
 architecture Behavioral of Mux_2_Way_4_Bit is
-
 
 begin
 
-Y <=  A when (S = '1') else B;
+    -- If S is '1', assign A to Y; otherwise assign B to Y
+    Y <= A when (S = '1') else B;
 
 end Behavioral;
-
