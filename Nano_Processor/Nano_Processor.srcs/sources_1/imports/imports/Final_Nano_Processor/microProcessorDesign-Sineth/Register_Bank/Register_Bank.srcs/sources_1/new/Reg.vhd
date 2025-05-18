@@ -35,8 +35,6 @@ end Reg;
 -- Behavioral architecture of the 4-bit Register
 architecture Behavioral of Reg is
 
-    -- Internal signal to hold the output value
-    signal Q_reg : STD_LOGIC_VECTOR(3 downto 0) := (others => '0');  -- Initialized to 0000
 
 begin
 
@@ -47,12 +45,9 @@ begin
         if rising_edge(Clk) then
             -- Load input D into register only if enable signal is high
             if (EN = '1') then
-                Q_reg <= D;
+                Q <= D;
             end if;
         end if;
     end process;
-
-    -- Assign internal register value to output
-    Q <= Q_reg;
 
 end Behavioral;

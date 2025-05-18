@@ -56,7 +56,6 @@ architecture Behavioral of Register_Bank is
     component Decoder_3_to_8
         Port ( 
             I : in STD_LOGIC_VECTOR (2 downto 0);        -- 3-bit input
-            EN: in STD_LOGIC := '1';
             Y : out STD_LOGIC_VECTOR (7 downto 0)        -- 8 enable outputs
         );
     end component;

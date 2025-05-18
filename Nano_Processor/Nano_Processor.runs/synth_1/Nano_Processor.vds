@@ -2,8 +2,8 @@
 # Vivado v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Fri May 16 22:22:28 2025
-# Process ID: 64684
+# Start of session at: Sun May 18 17:47:09 2025
+# Process ID: 83624
 # Current directory: E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.runs/synth_1
 # Command line: vivado.exe -log Nano_Processor.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Nano_Processor.tcl
 # Log file: E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.runs/synth_1/Nano_Processor.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 67364 
+INFO: Helper process launched with PID 63908 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 436.156 ; gain = 96.645
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 436.031 ; gain = 95.688
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'Nano_Processor' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/Nano_Processor.vhd:35]
 INFO: [Synth 8-3491] module 'Slow_Clk' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Bosilu/ProgramCounter/ProgramCounter.srcs/sources_1/imports/new/Slow_Clk.vhd:16' bound to instance 'Slow_Clk_0' of component 'Slow_Clk' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/Nano_Processor.vhd:156]
@@ -41,27 +41,23 @@ INFO: [Synth 8-226] default block is never used [E:/Vivado project/Final_Nano_Pr
 INFO: [Synth 8-256] done synthesizing module 'InstructionDecoder' (6#1) [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Instruction_Decoder/Instruction_Decoder.srcs/sources_1/new/InstructionDecoder.vhd:51]
 INFO: [Synth 8-3491] module 'Register_Bank' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:35' bound to instance 'Register_Bank_0' of component 'Register_Bank' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/Nano_Processor.vhd:190]
 INFO: [Synth 8-638] synthesizing module 'Register_Bank' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:53]
-INFO: [Synth 8-3491] module 'Decoder_3_to_8' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Decoder_3_to_8.vhd:35' bound to instance 'Decoder_3_to_8_0' of component 'Decoder_3_to_8' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:83]
-INFO: [Synth 8-638] synthesizing module 'Decoder_3_to_8' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Decoder_3_to_8.vhd:44]
-INFO: [Synth 8-3491] module 'Decoder_2_to_4' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Decoder_2_to_4.vhd:35' bound to instance 'Decoder_2_to_4_0' of component 'Decoder_2_to_4' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Decoder_3_to_8.vhd:62]
-INFO: [Synth 8-638] synthesizing module 'Decoder_2_to_4' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Decoder_2_to_4.vhd:44]
-INFO: [Synth 8-256] done synthesizing module 'Decoder_2_to_4' (7#1) [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Decoder_2_to_4.vhd:44]
-INFO: [Synth 8-3491] module 'Decoder_2_to_4' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Decoder_2_to_4.vhd:35' bound to instance 'Decoder_2_to_4_1' of component 'Decoder_2_to_4' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Decoder_3_to_8.vhd:71]
-INFO: [Synth 8-256] done synthesizing module 'Decoder_3_to_8' (8#1) [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Decoder_3_to_8.vhd:44]
-INFO: [Synth 8-3491] module 'Reg' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:26' bound to instance 'Reg_0' of component 'Reg' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:99]
+INFO: [Synth 8-3491] module 'Decoder_3_to_8' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Decoder_3_to_8.vhd:35' bound to instance 'Decoder_3_to_8_0' of component 'Decoder_3_to_8' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:82]
+INFO: [Synth 8-638] synthesizing module 'Decoder_3_to_8' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Decoder_3_to_8.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'Decoder_3_to_8' (7#1) [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Decoder_3_to_8.vhd:43]
+INFO: [Synth 8-3491] module 'Reg' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:26' bound to instance 'Reg_0' of component 'Reg' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:98]
 INFO: [Synth 8-638] synthesizing module 'Reg' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:36]
-INFO: [Synth 8-256] done synthesizing module 'Reg' (9#1) [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:36]
-INFO: [Synth 8-3491] module 'Reg' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:26' bound to instance 'Reg_1' of component 'Reg' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:107]
-INFO: [Synth 8-3491] module 'Reg' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:26' bound to instance 'Reg_2' of component 'Reg' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:115]
-INFO: [Synth 8-3491] module 'Reg' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:26' bound to instance 'Reg_3' of component 'Reg' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:123]
-INFO: [Synth 8-3491] module 'Reg' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:26' bound to instance 'Reg_4' of component 'Reg' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:131]
-INFO: [Synth 8-3491] module 'Reg' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:26' bound to instance 'Reg_5' of component 'Reg' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:139]
-INFO: [Synth 8-3491] module 'Reg' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:26' bound to instance 'Reg_6' of component 'Reg' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:147]
-INFO: [Synth 8-3491] module 'Reg' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:26' bound to instance 'Reg_7' of component 'Reg' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:155]
-INFO: [Synth 8-256] done synthesizing module 'Register_Bank' (10#1) [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'Reg' (8#1) [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:36]
+INFO: [Synth 8-3491] module 'Reg' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:26' bound to instance 'Reg_1' of component 'Reg' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:106]
+INFO: [Synth 8-3491] module 'Reg' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:26' bound to instance 'Reg_2' of component 'Reg' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:114]
+INFO: [Synth 8-3491] module 'Reg' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:26' bound to instance 'Reg_3' of component 'Reg' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:122]
+INFO: [Synth 8-3491] module 'Reg' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:26' bound to instance 'Reg_4' of component 'Reg' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:130]
+INFO: [Synth 8-3491] module 'Reg' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:26' bound to instance 'Reg_5' of component 'Reg' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:138]
+INFO: [Synth 8-3491] module 'Reg' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:26' bound to instance 'Reg_6' of component 'Reg' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:146]
+INFO: [Synth 8-3491] module 'Reg' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd:26' bound to instance 'Reg_7' of component 'Reg' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:154]
+INFO: [Synth 8-256] done synthesizing module 'Register_Bank' (9#1) [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd:53]
 INFO: [Synth 8-3491] module 'Mux_2_Way_4_Bit' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/2_Way_4_Bit_Mux/2_Way_4_Bit_Mux.srcs/sources_1/new/Mux_2_Way_4_Bit.vhd:26' bound to instance 'Mux_2_Way_4_Bit_0' of component 'Mux_2_Way_4_Bit' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/Nano_Processor.vhd:200]
 INFO: [Synth 8-638] synthesizing module 'Mux_2_Way_4_Bit' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/2_Way_4_Bit_Mux/2_Way_4_Bit_Mux.srcs/sources_1/new/Mux_2_Way_4_Bit.vhd:36]
-INFO: [Synth 8-256] done synthesizing module 'Mux_2_Way_4_Bit' (11#1) [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/2_Way_4_Bit_Mux/2_Way_4_Bit_Mux.srcs/sources_1/new/Mux_2_Way_4_Bit.vhd:36]
+INFO: [Synth 8-256] done synthesizing module 'Mux_2_Way_4_Bit' (10#1) [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/2_Way_4_Bit_Mux/2_Way_4_Bit_Mux.srcs/sources_1/new/Mux_2_Way_4_Bit.vhd:36]
 INFO: [Synth 8-3491] module 'Mux_8_Way_4_Bit' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/8_Way_4_Bit_Mux/8_Way_4_Bit_Mux.srcs/sources_1/new/Mux_8_way_4_Bit.vhd:35' bound to instance 'Mux_8_Way_4_Bit_0' of component 'Mux_8_Way_4_Bit' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/Nano_Processor.vhd:204]
 INFO: [Synth 8-638] synthesizing module 'Mux_8_Way_4_Bit' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/8_Way_4_Bit_Mux/8_Way_4_Bit_Mux.srcs/sources_1/new/Mux_8_way_4_Bit.vhd:51]
 WARNING: [Synth 8-614] signal 'I0' is read in the process but is not in the sensitivity list [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/8_Way_4_Bit_Mux/8_Way_4_Bit_Mux.srcs/sources_1/new/Mux_8_way_4_Bit.vhd:55]
@@ -72,37 +68,24 @@ WARNING: [Synth 8-614] signal 'I4' is read in the process but is not in the sens
 WARNING: [Synth 8-614] signal 'I5' is read in the process but is not in the sensitivity list [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/8_Way_4_Bit_Mux/8_Way_4_Bit_Mux.srcs/sources_1/new/Mux_8_way_4_Bit.vhd:55]
 WARNING: [Synth 8-614] signal 'I6' is read in the process but is not in the sensitivity list [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/8_Way_4_Bit_Mux/8_Way_4_Bit_Mux.srcs/sources_1/new/Mux_8_way_4_Bit.vhd:55]
 WARNING: [Synth 8-614] signal 'I7' is read in the process but is not in the sensitivity list [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/8_Way_4_Bit_Mux/8_Way_4_Bit_Mux.srcs/sources_1/new/Mux_8_way_4_Bit.vhd:55]
-INFO: [Synth 8-256] done synthesizing module 'Mux_8_Way_4_Bit' (12#1) [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/8_Way_4_Bit_Mux/8_Way_4_Bit_Mux.srcs/sources_1/new/Mux_8_way_4_Bit.vhd:51]
+INFO: [Synth 8-256] done synthesizing module 'Mux_8_Way_4_Bit' (11#1) [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/8_Way_4_Bit_Mux/8_Way_4_Bit_Mux.srcs/sources_1/new/Mux_8_way_4_Bit.vhd:51]
 INFO: [Synth 8-3491] module 'Mux_8_Way_4_Bit' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/8_Way_4_Bit_Mux/8_Way_4_Bit_Mux.srcs/sources_1/new/Mux_8_way_4_Bit.vhd:35' bound to instance 'Mux_8_Way_4_Bit_1' of component 'Mux_8_Way_4_Bit' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/Nano_Processor.vhd:211]
 WARNING: [Synth 8-5640] Port 'c_out' is missing in component declaration [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/Nano_Processor.vhd:50]
-INFO: [Synth 8-3491] module 'AdderSubtractor4bitUnit' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/AdderSubtractor4bitUnit.vhd:6' bound to instance 'Adder_Substractor_4BitUnit' of component 'AdderSubtractor4bitUnit' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/Nano_Processor.vhd:218]
-INFO: [Synth 8-638] synthesizing module 'AdderSubtractor4bitUnit' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/AdderSubtractor4bitUnit.vhd:19]
-INFO: [Synth 8-3491] module 'RCA_4' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/RCA_4.vhd:27' bound to instance 'RCA_4_0' of component 'RCA_4' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/AdderSubtractor4bitUnit.vhd:45]
-INFO: [Synth 8-638] synthesizing module 'RCA_4' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/RCA_4.vhd:38]
-INFO: [Synth 8-3491] module 'FA' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/FA.vhd:26' bound to instance 'FA_0' of component 'FA' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/RCA_4.vhd:57]
-INFO: [Synth 8-638] synthesizing module 'FA' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/FA.vhd:37]
-INFO: [Synth 8-3491] module 'HA' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/HA.vhd:26' bound to instance 'HA_0' of component 'HA' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/FA.vhd:55]
-INFO: [Synth 8-638] synthesizing module 'HA' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/HA.vhd:36]
-INFO: [Synth 8-256] done synthesizing module 'HA' (13#1) [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/HA.vhd:36]
-INFO: [Synth 8-3491] module 'HA' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/HA.vhd:26' bound to instance 'HA_1' of component 'HA' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/FA.vhd:64]
-INFO: [Synth 8-256] done synthesizing module 'FA' (14#1) [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/FA.vhd:37]
-INFO: [Synth 8-3491] module 'FA' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/FA.vhd:26' bound to instance 'FA_1' of component 'FA' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/RCA_4.vhd:67]
-INFO: [Synth 8-3491] module 'FA' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/FA.vhd:26' bound to instance 'FA_2' of component 'FA' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/RCA_4.vhd:77]
-INFO: [Synth 8-3491] module 'FA' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/FA.vhd:26' bound to instance 'FA_3' of component 'FA' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/RCA_4.vhd:87]
-INFO: [Synth 8-256] done synthesizing module 'RCA_4' (15#1) [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/RCA_4.vhd:38]
-WARNING: [Synth 8-3848] Net C_OUT in module/entity AdderSubtractor4bitUnit does not have driver. [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/AdderSubtractor4bitUnit.vhd:12]
-INFO: [Synth 8-256] done synthesizing module 'AdderSubtractor4bitUnit' (16#1) [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/AdderSubtractor4bitUnit.vhd:19]
+INFO: [Synth 8-3491] module 'AdderSubtractor4bitUnit' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/AdderSubtractor4bitUnit.vhd:7' bound to instance 'Adder_Substractor_4BitUnit' of component 'AdderSubtractor4bitUnit' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/Nano_Processor.vhd:218]
+INFO: [Synth 8-638] synthesizing module 'AdderSubtractor4bitUnit' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/AdderSubtractor4bitUnit.vhd:20]
+WARNING: [Synth 8-3848] Net C_OUT in module/entity AdderSubtractor4bitUnit does not have driver. [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/AdderSubtractor4bitUnit.vhd:13]
+INFO: [Synth 8-256] done synthesizing module 'AdderSubtractor4bitUnit' (12#1) [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/AdderSubtractor4bitUnit.vhd:20]
 INFO: [Synth 8-3491] module 'LUT_16_7' declared at 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/LUT_16_7.vhd:26' bound to instance 'LUT_16_7_0' of component 'LUT_16_7' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/Nano_Processor.vhd:224]
 INFO: [Synth 8-638] synthesizing module 'LUT_16_7' [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/LUT_16_7.vhd:33]
-INFO: [Synth 8-256] done synthesizing module 'LUT_16_7' (17#1) [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/LUT_16_7.vhd:33]
-INFO: [Synth 8-256] done synthesizing module 'Nano_Processor' (18#1) [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/Nano_Processor.vhd:35]
+INFO: [Synth 8-256] done synthesizing module 'LUT_16_7' (13#1) [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/LUT_16_7.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'Nano_Processor' (14#1) [E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/Nano_Processor.vhd:35]
 WARNING: [Synth 8-3917] design Nano_Processor has port an[3] driven by constant 1
 WARNING: [Synth 8-3917] design Nano_Processor has port an[2] driven by constant 1
 WARNING: [Synth 8-3917] design Nano_Processor has port an[1] driven by constant 1
 WARNING: [Synth 8-3917] design Nano_Processor has port an[0] driven by constant 0
 WARNING: [Synth 8-3331] design AdderSubtractor4bitUnit has unconnected port C_OUT
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 491.391 ; gain = 151.879
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 490.531 ; gain = 150.188
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -115,10 +98,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 491.391 ; gain = 151.879
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 490.531 ; gain = 150.188
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 491.391 ; gain = 151.879
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 490.531 ; gain = 150.188
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -134,30 +117,29 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 823.211 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 821.340 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 823.211 ; gain = 483.699
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 821.340 ; gain = 480.996
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 823.211 ; gain = 483.699
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 821.340 ; gain = 480.996
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 823.211 ; gain = 483.699
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 821.340 ; gain = 480.996
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "clk_status" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5544] ROM "ROM" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "JumpFlag" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "sevenSegment_ROM" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 823.211 ; gain = 483.699
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 821.340 ; gain = 480.996
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -171,9 +153,8 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     32 Bit       Adders := 1     
+	   3 Input      5 Bit       Adders := 1     
 	   2 Input      3 Bit       Adders := 1     
-+---XORs : 
-	   2 Input      1 Bit         XORs := 8     
 +---Registers : 
 	               32 Bit    Registers := 1     
 	                4 Bit    Registers := 8     
@@ -182,7 +163,7 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 1     
 	   9 Input     12 Bit        Muxes := 1     
-	  17 Input      7 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 3     
 	   2 Input      3 Bit        Muxes := 1     
 	   4 Input      3 Bit        Muxes := 1     
@@ -226,6 +207,10 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   4 Input      3 Bit        Muxes := 1     
 	   5 Input      1 Bit        Muxes := 1     
+Module Decoder_3_to_8 
+Detailed RTL Component Info : 
++---Muxes : 
+	   8 Input      8 Bit        Muxes := 1     
 Module Reg 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -238,18 +223,12 @@ Module Mux_2_Way_4_Bit
 Detailed RTL Component Info : 
 +---Muxes : 
 	   2 Input      4 Bit        Muxes := 1     
-Module HA 
-Detailed RTL Component Info : 
-+---XORs : 
-	   2 Input      1 Bit         XORs := 1     
 Module AdderSubtractor4bitUnit 
 Detailed RTL Component Info : 
++---Adders : 
+	   3 Input      5 Bit       Adders := 1     
 +---Muxes : 
 	   2 Input      4 Bit        Muxes := 2     
-Module LUT_16_7 
-Detailed RTL Component Info : 
-+---Muxes : 
-	  17 Input      7 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -272,13 +251,13 @@ WARNING: [Synth 8-3917] design Nano_Processor has port an[3] driven by constant 
 WARNING: [Synth 8-3917] design Nano_Processor has port an[2] driven by constant 1
 WARNING: [Synth 8-3917] design Nano_Processor has port an[1] driven by constant 1
 WARNING: [Synth 8-3917] design Nano_Processor has port an[0] driven by constant 0
-INFO: [Synth 8-3886] merging instance 'Register_Bank_0/Reg_0/Q_reg_reg[3]' (FD) to 'Register_Bank_0/Reg_0/Q_reg_reg[0]'
-INFO: [Synth 8-3886] merging instance 'Register_Bank_0/Reg_0/Q_reg_reg[2]' (FD) to 'Register_Bank_0/Reg_0/Q_reg_reg[0]'
-INFO: [Synth 8-3886] merging instance 'Register_Bank_0/Reg_0/Q_reg_reg[1]' (FD) to 'Register_Bank_0/Reg_0/Q_reg_reg[0]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Register_Bank_0/Reg_0/Q_reg_reg[0] )
-WARNING: [Synth 8-3332] Sequential element (Register_Bank_0/Reg_0/Q_reg_reg[0]) is unused and will be removed from module Nano_Processor.
+INFO: [Synth 8-3886] merging instance 'Register_Bank_0/Reg_0/Q_reg[0]' (FD) to 'Register_Bank_0/Reg_0/Q_reg[1]'
+INFO: [Synth 8-3886] merging instance 'Register_Bank_0/Reg_0/Q_reg[1]' (FD) to 'Register_Bank_0/Reg_0/Q_reg[2]'
+INFO: [Synth 8-3886] merging instance 'Register_Bank_0/Reg_0/Q_reg[2]' (FD) to 'Register_Bank_0/Reg_0/Q_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Register_Bank_0/Reg_0/Q_reg[3] )
+WARNING: [Synth 8-3332] Sequential element (Register_Bank_0/Reg_0/Q_reg[3]) is unused and will be removed from module Nano_Processor.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 823.211 ; gain = 483.699
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 821.340 ; gain = 480.996
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -290,13 +269,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 823.211 ; gain = 483.699
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 821.340 ; gain = 480.996
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 836.684 ; gain = 497.172
+Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 830.699 ; gain = 490.355
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -307,20 +286,20 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3332] Sequential element (Register_Bank_0/Reg_4/Q_reg_reg[3]) is unused and will be removed from module Nano_Processor.
-WARNING: [Synth 8-3332] Sequential element (Register_Bank_0/Reg_4/Q_reg_reg[2]) is unused and will be removed from module Nano_Processor.
-WARNING: [Synth 8-3332] Sequential element (Register_Bank_0/Reg_4/Q_reg_reg[1]) is unused and will be removed from module Nano_Processor.
-WARNING: [Synth 8-3332] Sequential element (Register_Bank_0/Reg_4/Q_reg_reg[0]) is unused and will be removed from module Nano_Processor.
-WARNING: [Synth 8-3332] Sequential element (Register_Bank_0/Reg_5/Q_reg_reg[3]) is unused and will be removed from module Nano_Processor.
-WARNING: [Synth 8-3332] Sequential element (Register_Bank_0/Reg_5/Q_reg_reg[2]) is unused and will be removed from module Nano_Processor.
-WARNING: [Synth 8-3332] Sequential element (Register_Bank_0/Reg_5/Q_reg_reg[1]) is unused and will be removed from module Nano_Processor.
-WARNING: [Synth 8-3332] Sequential element (Register_Bank_0/Reg_5/Q_reg_reg[0]) is unused and will be removed from module Nano_Processor.
-WARNING: [Synth 8-3332] Sequential element (Register_Bank_0/Reg_6/Q_reg_reg[3]) is unused and will be removed from module Nano_Processor.
-WARNING: [Synth 8-3332] Sequential element (Register_Bank_0/Reg_6/Q_reg_reg[2]) is unused and will be removed from module Nano_Processor.
-WARNING: [Synth 8-3332] Sequential element (Register_Bank_0/Reg_6/Q_reg_reg[1]) is unused and will be removed from module Nano_Processor.
-WARNING: [Synth 8-3332] Sequential element (Register_Bank_0/Reg_6/Q_reg_reg[0]) is unused and will be removed from module Nano_Processor.
+WARNING: [Synth 8-3332] Sequential element (Register_Bank_0/Reg_4/Q_reg[3]) is unused and will be removed from module Nano_Processor.
+WARNING: [Synth 8-3332] Sequential element (Register_Bank_0/Reg_4/Q_reg[2]) is unused and will be removed from module Nano_Processor.
+WARNING: [Synth 8-3332] Sequential element (Register_Bank_0/Reg_4/Q_reg[1]) is unused and will be removed from module Nano_Processor.
+WARNING: [Synth 8-3332] Sequential element (Register_Bank_0/Reg_4/Q_reg[0]) is unused and will be removed from module Nano_Processor.
+WARNING: [Synth 8-3332] Sequential element (Register_Bank_0/Reg_5/Q_reg[3]) is unused and will be removed from module Nano_Processor.
+WARNING: [Synth 8-3332] Sequential element (Register_Bank_0/Reg_5/Q_reg[2]) is unused and will be removed from module Nano_Processor.
+WARNING: [Synth 8-3332] Sequential element (Register_Bank_0/Reg_5/Q_reg[1]) is unused and will be removed from module Nano_Processor.
+WARNING: [Synth 8-3332] Sequential element (Register_Bank_0/Reg_5/Q_reg[0]) is unused and will be removed from module Nano_Processor.
+WARNING: [Synth 8-3332] Sequential element (Register_Bank_0/Reg_6/Q_reg[3]) is unused and will be removed from module Nano_Processor.
+WARNING: [Synth 8-3332] Sequential element (Register_Bank_0/Reg_6/Q_reg[2]) is unused and will be removed from module Nano_Processor.
+WARNING: [Synth 8-3332] Sequential element (Register_Bank_0/Reg_6/Q_reg[1]) is unused and will be removed from module Nano_Processor.
+WARNING: [Synth 8-3332] Sequential element (Register_Bank_0/Reg_6/Q_reg[0]) is unused and will be removed from module Nano_Processor.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 837.457 ; gain = 497.945
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 831.488 ; gain = 491.145
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -344,7 +323,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 837.457 ; gain = 497.945
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 831.488 ; gain = 491.145
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -357,7 +336,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 837.457 ; gain = 497.945
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 831.488 ; gain = 491.145
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -369,25 +348,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 837.457 ; gain = 497.945
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 831.488 ; gain = 491.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 837.457 ; gain = 497.945
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 831.488 ; gain = 491.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 837.457 ; gain = 497.945
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 831.488 ; gain = 491.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 837.457 ; gain = 497.945
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 831.488 ; gain = 491.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -406,21 +385,22 @@ Report Cell Usage:
 |1     |BUFG   |     1|
 |2     |CARRY4 |     8|
 |3     |LUT2   |     3|
-|4     |LUT3   |    10|
-|5     |LUT4   |    17|
-|6     |LUT5   |    12|
-|7     |LUT6   |    15|
-|8     |FDRE   |    53|
-|9     |IBUF   |     2|
-|10    |OBUF   |    17|
+|4     |LUT3   |    11|
+|5     |LUT4   |    18|
+|6     |LUT5   |    10|
+|7     |LUT6   |    12|
+|8     |MUXF7  |     1|
+|9     |FDRE   |    53|
+|10    |IBUF   |     2|
+|11    |OBUF   |    17|
 +------+-------+------+
 
 Report Instance Areas: 
 +------+------------------+---------------+------+
 |      |Instance          |Module         |Cells |
 +------+------------------+---------------+------+
-|1     |top               |               |   138|
-|2     |  Program_Counter |ProgramCounter |    33|
+|1     |top               |               |   136|
+|2     |  Program_Counter |ProgramCounter |    31|
 |3     |  Register_Bank_0 |Register_Bank  |    31|
 |4     |    Reg_1         |Reg            |     4|
 |5     |    Reg_2         |Reg_0          |     8|
@@ -429,13 +409,13 @@ Report Instance Areas:
 |8     |  Slow_Clk_0      |Slow_Clk       |    54|
 +------+------------------+---------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 837.457 ; gain = 497.945
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 831.488 ; gain = 491.145
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 17 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:18 . Memory (MB): peak = 837.457 ; gain = 166.125
-Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 837.457 ; gain = 497.945
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 831.488 ; gain = 160.336
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:24 . Memory (MB): peak = 831.488 ; gain = 491.145
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 10 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 11 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -443,10 +423,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-90 Infos, 32 Warnings, 0 Critical Warnings and 0 Errors encountered.
+72 Infos, 32 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:27 . Memory (MB): peak = 839.418 ; gain = 511.844
+synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:27 . Memory (MB): peak = 831.488 ; gain = 503.242
 INFO: [Common 17-1381] The checkpoint 'E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.runs/synth_1/Nano_Processor.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Nano_Processor_utilization_synth.rpt -pb Nano_Processor_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 839.418 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Fri May 16 22:23:08 2025...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 831.488 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sun May 18 17:47:40 2025...

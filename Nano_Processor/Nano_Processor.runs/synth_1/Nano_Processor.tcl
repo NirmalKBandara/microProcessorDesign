@@ -31,16 +31,12 @@ set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {
   {E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/new/2_Way_3_Bit_Mux.vhd}
   {E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/AdderSubtractor4bitUnit.vhd}
-  {E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Decoder_2_to_4.vhd}
   {E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Decoder_3_to_8.vhd}
-  {E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/FA.vhd}
-  {E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/HA.vhd}
   {E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Instruction_Decoder/Instruction_Decoder.srcs/sources_1/new/InstructionDecoder.vhd}
   {E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/LUT_16_7.vhd}
   {E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/2_Way_4_Bit_Mux/2_Way_4_Bit_Mux.srcs/sources_1/new/Mux_2_Way_4_Bit.vhd}
   {E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/8_Way_4_Bit_Mux/8_Way_4_Bit_Mux.srcs/sources_1/new/Mux_8_way_4_Bit.vhd}
   {E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Bosilu/ProgramCounter/ProgramCounter.srcs/sources_1/new/ProgramCounter.vhd}
-  {E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/RCA_4.vhd}
   {E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd}
   {E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd}
   {E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Bosilu/ProgramCounter/ProgramCounter.srcs/sources_1/imports/new/Slow_Clk.vhd}

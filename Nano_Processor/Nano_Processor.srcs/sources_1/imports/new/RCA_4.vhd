@@ -21,7 +21,7 @@
 -- Import standard logic library
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
+use IEEE.NUMERIC_STD.ALL;
 -- Entity declaration for RCA_4
 -- This module adds two 4-bit numbers using ripple carry logic
 entity RCA_4 is
@@ -49,48 +49,15 @@ architecture Behavioral of RCA_4 is
     END COMPONENT;
 
     -- Intermediate carry signals between the full adders
-    SIGNAL FA0_C, FA1_C, FA2_C : STD_LOGIC;
+    signal temp_sum : unsigned(4 downto 0);  -- one bit wider to hold carry
 
 begin
+   
 
-    -- First Full Adder: LSB (bit 0)
-    FA_0: FA
-    PORT MAP(
-        A     => A(0),
-        B     => B(0),
-        C_IN  => C_IN,     -- Use external carry-in
-        S     => S(0),
-        C_OUT => FA0_C     -- Carry to next FA
-    );
+    temp_sum <= ('0' & unsigned(A)) + unsigned(B) + ("0000" & C_IN);  -- 5-bit addition
+    S <= std_logic_vector(temp_sum(3 downto 0));
+    C_OUT <= temp_sum(4);
 
-    -- Second Full Adder: bit 1
-    FA_1 : FA
-    PORT MAP(
-        A     => A(1),
-        B     => B(1),
-        C_IN  => FA0_C,    -- Carry from FA_0
-        S     => S(1),
-        C_OUT => FA1_C     -- Carry to next FA
-    );
 
-    -- Third Full Adder: bit 2
-    FA_2 : FA
-    PORT MAP(
-        A     => A(2),
-        B     => B(2),
-        C_IN  => FA1_C,    -- Carry from FA_1
-        S     => S(2),
-        C_OUT => FA2_C     -- Carry to next FA
-    );
-
-    -- Fourth Full Adder: MSB (bit 3)
-    FA_3 : FA
-    PORT MAP(
-        A     => A(3),
-        B     => B(3),
-        C_IN  => FA2_C,    -- Carry from FA_2
-        S     => S(3),
-        C_OUT => C_OUT     -- Final carry-out
-    );
 
 end Behavioral;

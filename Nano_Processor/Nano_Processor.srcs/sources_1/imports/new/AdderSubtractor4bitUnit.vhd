@@ -1,6 +1,7 @@
 -- Include IEEE standard logic library
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Entity declaration for a 4-bit Adder/Subtractor Unit
 entity AdderSubtractor4bitUnit is
@@ -18,21 +19,11 @@ end AdderSubtractor4bitUnit;
 -- Architecture definition using a 4-bit Ripple Carry Adder component
 architecture Behavioral of AdderSubtractor4bitUnit is
 
-    -- Declaration of the 4-bit Ripple Carry Adder (RCA_4) component
-    component RCA_4
-        Port (
-            A     : in  STD_LOGIC_VECTOR(3 downto 0); -- Input A
-            B     : in  STD_LOGIC_VECTOR(3 downto 0); -- Input B
-            C_IN  : in  STD_LOGIC;                    -- Carry-in (used as 1 for subtraction)
-            S     : out STD_LOGIC_VECTOR(3 downto 0); -- Sum output
-            C_OUT : out STD_LOGIC                     -- Carry-out or overflow flag
-        );
-    end component;
-
     -- Internal signals
     signal A_mod : STD_LOGIC_VECTOR(3 downto 0); -- Modified A input (inverted for subtraction)
     signal B_mod : STD_LOGIC_VECTOR(3 downto 0); -- Modified B input (zero for subtraction)
-    signal S     : STD_LOGIC_VECTOR(3 downto 0); -- Output from RCA_4
+    signal S     : STD_LOGIC_VECTOR(4 downto 0); -- Output from RCA_4
+    signal temp_sum : unsigned(4 downto 0);  -- one bit wider to hold carry
 
 begin
 
@@ -42,21 +33,16 @@ begin
     B_mod <= B when (ADD_SUB = '0') else (others => '0'); -- B is ignored in subtraction
 
     -- Instantiation of the 4-bit Ripple Carry Adder
-    RCA_4_0: RCA_4
-        port map(
-            A     => A_mod,
-            B     => B_mod,
-            C_IN  => ADD_SUB,  -- Carry-in is 1 for subtraction to complete 2's complement
-            S     => S,
-            C_OUT => OVERFLOW  -- This output is used as OVERFLOW flag
-        );
-
+    
+    temp_sum <= ('0'& unsigned(A_mod)+ unsigned(B_mod)+("0000" & ADD_SUB));
+    S <= STD_LOGIC_VECTOR(temp_sum);
     -- Assign the adder output to RESULT
-    RESULT <= S;
+    RESULT <= S(3 downto 0);
 
     -- Set ZERO flag if all bits in the result are '0'
     ZERO <= not (S(0) OR S(1) OR S(2) OR S(3));
 
     -- Note: C_OUT is declared but not used in this architecture
+    OVERFLOW <= S(4);
 
 end Behavioral;

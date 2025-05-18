@@ -35,9 +35,17 @@ end Mux_2_Way_4_Bit;
 -- Behavioral architecture of the multiplexer
 architecture Behavioral of Mux_2_Way_4_Bit is
 
+component Mux_2_Way_1_Bit
+    Port ( I0 : in STD_LOGIC;
+       I1 : in STD_LOGIC;
+       S : in STD_LOGIC;
+       Y : out STD_LOGIC);
+end component;
+
+
+
 begin
-
-    -- If S is '1', assign A to Y; otherwise assign B to Y
-    Y <= A when (S = '1') else B;
-
+    
+    Y <= A when(S='1') else B;
+              
 end Behavioral;

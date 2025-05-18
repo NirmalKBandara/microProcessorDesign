@@ -50,27 +50,23 @@ architecture Behavioral of FA is
     SIGNAL HA0_S, HA0_C, HA1_S, HA1_C : STD_LOGIC;
 
 begin
-
-    -- First Half Adder: adds A and B
     HA_0: HA
-    PORT MAP(
+    port map(
         A => A,
         B => B,
-        S => HA0_S,    -- Intermediate sum
-        C => HA0_C     -- First carry output
-    );
-
-    -- Second Half Adder: adds intermediate sum and carry-in
+        S => HA0_S,
+        C => HA0_C);
+        
     HA_1: HA
-    PORT MAP(
-        A => HA0_S,
-        B => C_IN,
-        S => HA1_S,    -- Final sum output
-        C => HA1_C     -- Second carry output
-    );
-
+    port map(
+        A => C_IN,
+        B => HA0_S,
+        S => HA1_S,
+        C => HA1_C);
+    
+    
     -- Assign final outputs
     S      <= HA1_S;               -- Sum output from second HA
-    C_OUT  <= HA0_C OR HA1_C;      -- Final carry-out using OR of both HA carry outs
+    C_OUT  <= HA1_C or HA0_C;      -- Final carry-out using OR of both HA carry outs
 
 end Behavioral;

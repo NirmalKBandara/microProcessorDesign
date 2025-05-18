@@ -35,9 +35,9 @@ end Mux_2_Way_3_Bit;
 
 -- Architecture that defines the behavior of the multiplexer
 architecture Behavioral of Mux_2_Way_3_Bit is
+
 begin
 
-    -- If select signal S is '1', output A; otherwise, output B
-    Y <= A when (S = '1') else B;
+    Y <= A when(S='1') else B;
 
 end Behavioral;

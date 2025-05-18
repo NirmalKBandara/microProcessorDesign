@@ -32,32 +32,28 @@ end LUT_16_7;
 
 architecture Behavioral of LUT_16_7 is
 
-    -- Define a ROM type: 16 entries of 7-bit vectors
-    type rom_type is array (0 to 15) of std_logic_vector(6 downto 0);
-
-    -- Initialize ROM with seven-segment codes for digits 0-F
-    signal sevenSegment_ROM : rom_type := (
-        "1000000", -- 0: segments to display '0'
-        "1111001", -- 1
-        "0100100", -- 2
-        "0110000", -- 3
-        "0011001", -- 4
-        "0010010", -- 5
-        "0000010", -- 6
-        "1111000", -- 7
-        "0000000", -- 8
-        "0010000", -- 9
-        "0001000", -- a
-        "0000011", -- b
-        "1000110", -- c
-        "0100001", -- d
-        "0000110", -- e
-        "0001110"  -- f
-    );
-
 begin
-
-    -- Convert 4-bit input address to integer and output corresponding ROM data
-    data <= sevenSegment_ROM(to_integer(unsigned(address)));
+    
+process(address)
+begin
+    case address is
+        when "0000" => data <= "1000000"; -- 0
+        when "0001" => data <= "1111001"; -- 1
+        when "0010" => data <= "0100100"; -- 2
+        when "0011" => data <= "0110000"; -- 3
+        when "0100" => data <= "0011001"; -- 4
+        when "0101" => data <= "0010010"; -- 5
+        when "0110" => data <= "0000010"; -- 6
+        when "0111" => data <= "1111000"; -- 7
+        when "1000" => data <= "0000000"; -- 8
+        when "1001" => data <= "0010000"; -- 9
+        when "1010" => data <= "0001000"; -- A
+        when "1011" => data <= "0000011"; -- B
+        when "1100" => data <= "1000110"; -- C
+        when "1101" => data <= "0100001"; -- D
+        when "1110" => data <= "0000110"; -- E
+        when others => data <= "0001110"; -- F
+    end case;
+end process;
 
 end Behavioral;
