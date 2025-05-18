@@ -1,10 +1,4 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/new/2_Way_3_Bit_Mux.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity Mux_2_Way_3_Bit
-INFO: [VRFC 10-163] Analyzing VHDL file "E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/AdderSubtractor4bitUnit.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity AdderSubtractor4bitUnit
-INFO: [VRFC 10-163] Analyzing VHDL file "E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Decoder_3_to_8.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity Decoder_3_to_8
-INFO: [VRFC 10-163] Analyzing VHDL file "E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/2_Way_4_Bit_Mux/2_Way_4_Bit_Mux.srcs/sources_1/new/Mux_2_Way_4_Bit.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity Mux_2_Way_4_Bit
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/Nano_Processor.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Nano_Processor
 INFO: [VRFC 10-163] Analyzing VHDL file "E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity Register_Bank

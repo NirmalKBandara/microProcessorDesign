@@ -2,11 +2,20 @@
 # Vivado v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Sun May 18 21:42:39 2025
-# Process ID: 68260
+# Start of session at: Mon May 19 01:39:41 2025
+# Process ID: 20436
 # Current directory: E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.runs/impl_1
 # Command line: vivado.exe -log Nano_Processor.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source Nano_Processor.tcl -notrace
 # Log file: E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.runs/impl_1/Nano_Processor.vdi
 # Journal file: E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.runs/impl_1\vivado.jou
 #-----------------------------------------------------------
 source Nano_Processor.tcl -notrace
+
+*** Halting run - EA reset detected ***
+
+
+
+    while executing
+"start_step init_design"
+    (file "Nano_Processor.tcl" line 64)
+INFO: [Common 17-206] Exiting Vivado at Mon May 19 01:39:44 2025...

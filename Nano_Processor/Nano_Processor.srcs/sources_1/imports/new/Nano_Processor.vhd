@@ -20,6 +20,7 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Entity declaration for the Nano Processor
 entity Nano_Processor is
@@ -36,14 +37,20 @@ architecture Behavioral of Nano_Processor is
 
     -- Register bank: 8 registers, 4-bit wide
     component Register_Bank
-        Port ( 
-            Reg_EN      : in STD_LOGIC_VECTOR (2 downto 0);  
-            Clk         : in STD_LOGIC;
-            D           : in STD_LOGIC_VECTOR (3 downto 0);
-            Res         : in STD_LOGIC;
-            Reg_0_out, Reg_1_out, Reg_2_out, Reg_3_out : out STD_LOGIC_VECTOR (3 downto 0);
-            Reg_4_out, Reg_5_out, Reg_6_out, Reg_7_out : out STD_LOGIC_VECTOR (3 downto 0)
-       );
+    Port ( 
+        Reg_EN      : in STD_LOGIC_VECTOR (2 downto 0);  -- 3-bit input to select which register to enable
+        Clk         : in STD_LOGIC;                      -- Clock signal
+        D           : in STD_LOGIC_VECTOR (3 downto 0);  -- 4-bit data input
+        Res         : in STD_LOGIC := '0';                      -- Reset signal for all registers
+        Reg_0_out   : out STD_LOGIC_VECTOR (3 downto 0); -- Output of Register 0
+        Reg_1_out   : out STD_LOGIC_VECTOR (3 downto 0); -- Output of Register 1
+        Reg_2_out   : out STD_LOGIC_VECTOR (3 downto 0); -- Output of Register 2
+        Reg_3_out   : out STD_LOGIC_VECTOR (3 downto 0); -- Output of Register 3
+        Reg_4_out   : out STD_LOGIC_VECTOR (3 downto 0); -- Output of Register 4
+        Reg_5_out   : out STD_LOGIC_VECTOR (3 downto 0); -- Output of Register 5
+        Reg_6_out   : out STD_LOGIC_VECTOR (3 downto 0); -- Output of Register 6
+        Reg_7_out   : out STD_LOGIC_VECTOR (3 downto 0)  -- Output of Register 7
+    );
     end component;
 
     -- ALU: 4-bit Adder/Subtractor
@@ -67,11 +74,11 @@ architecture Behavioral of Nano_Processor is
     end component;
 
     -- 2-to-1 multiplexer for 3-bit addresses
-    component Mux_2_Way_3_Bit
+    component Rom_Address_Select
         Port (
-            A, B : in STD_LOGIC_VECTOR (2 downto 0);
+            A, B : in unsigned(2 downto 0);
             S   : in STD_LOGIC;
-            Y   : out STD_LOGIC_VECTOR (2 downto 0)
+            Y   : out unsigned (2 downto 0)
         );
     end component;
 
@@ -96,7 +103,7 @@ architecture Behavioral of Nano_Processor is
             ImmediateValue  : out STD_LOGIC_VECTOR (3 downto 0);
             OperationSelect : out STD_LOGIC;
             JumpFlag        : out STD_LOGIC;
-            JumpAddress     : out STD_LOGIC_VECTOR(2 downto 0)
+            JumpAddress     : out unsigned(2 downto 0)
       );
     end component;
 
@@ -105,8 +112,8 @@ architecture Behavioral of Nano_Processor is
         Port (
             Clk_in  : in STD_LOGIC;
             Res     : in STD_LOGIC;
-            NextVal : in STD_LOGIC_VECTOR (2 downto 0);
-            Q       : out STD_LOGIC_VECTOR (2 downto 0)
+            NextVal : in unsigned (2 downto 0);
+            Q       : out unsigned (2 downto 0)
         );
     end component;
 
@@ -121,15 +128,15 @@ architecture Behavioral of Nano_Processor is
     -- Adds 1 to 3-bit input (used for next instruction address)
     component adder_3bit
         Port (
-            INPUT  : in STD_LOGIC_VECTOR (2 downto 0);
-            OUTPUT : out STD_LOGIC_VECTOR (2 downto 0)
+            INPUT  : in unsigned (2 downto 0);
+            OUTPUT : out unsigned (2 downto 0)
         );
     end component;
 
     -- ROM: instruction memory
     component program_rom
         Port ( 
-            address     : in STD_LOGIC_VECTOR (2 downto 0);
+            address     : in unsigned (2 downto 0);
             instruction : out STD_LOGIC_VECTOR (11 downto 0)
         );
     end component;
@@ -143,13 +150,12 @@ architecture Behavioral of Nano_Processor is
     end component;
 
     -- Internal signals
-    signal Clk_out, Jump_Flag, LoadSelect, OperationSelect, write_enable : STD_LOGIC;
+    signal Clk_out, Jump_Flag, LoadSelect, OperationSelect : STD_LOGIC;
     signal Instruction_Bus_1 : STD_LOGIC_VECTOR(11 downto 0);
-    signal Next_Rom_Address, Rom_Address_Add, Rom_Address, Jump_Address : STD_LOGIC_VECTOR(2 downto 0);
+    signal Next_Rom_Address, Rom_Address_Add, Rom_Address, Jump_Address : unsigned(2 downto 0);
     signal Reg_EN, RegSelect_A, RegSelect_B : STD_LOGIC_VECTOR(2 downto 0);
     signal Reg_A, Reg_B, ImmediateValue, Result, Value : STD_LOGIC_VECTOR(3 downto 0);
     signal Reg_0, Reg_1, Reg_2, Reg_3, Reg_4, Reg_5, Reg_6, Reg_7 : STD_LOGIC_VECTOR(3 downto 0);
-
 begin
 
     -- Slow clock generator
@@ -161,12 +167,12 @@ begin
     port map(Clk_in => Clk_out, Res => Res, NextVal => Next_Rom_Address, Q => Rom_Address);
 
     -- PC + 1 adder
-    Adder_3_Bit: adder_3bit
-    port map(INPUT => Rom_Address, OUTPUT => Rom_Address_Add);
+    --Adder_3_Bit: adder_3bit
+    --port map(INPUT => Rom_Address, OUTPUT => Rom_Address_Add);
 
     -- Select between jump address and next address
-    Mux_2_Way_3_Bit_0: Mux_2_Way_3_Bit
-    port map(A => Jump_Address, B => Rom_Address_Add, S => Jump_Flag, Y => Next_Rom_Address);
+    Rom_Address_Select_0: Rom_Address_Select
+    port map(A => Jump_Address, B => Rom_Address, S => Jump_Flag, Y => Next_Rom_Address);
 
     -- Fetch instruction from ROM
     Program_Rom_0: Program_Rom
@@ -193,8 +199,8 @@ begin
         Clk => Clk_out,
         D => Value,
         Res => Res,
-        Reg_0_out => Reg_0, Reg_1_out => Reg_1, Reg_2_out => Reg_2, Reg_3_out => Reg_3,
-        Reg_4_out => Reg_4, Reg_5_out => Reg_5, Reg_6_out => Reg_6, Reg_7_out => Reg_7);
+        Reg_0_out => Reg_0,Reg_1_out => Reg_1,Reg_2_out => Reg_2,Reg_3_out => Reg_3,Reg_4_out => Reg_4,
+        Reg_5_out => Reg_5,Reg_6_out => Reg_6,Reg_7_out => Reg_7);
 
     -- Select between ALU result and immediate value
     Mux_2_Way_4_Bit_0: Mux_2_Way_4_Bit

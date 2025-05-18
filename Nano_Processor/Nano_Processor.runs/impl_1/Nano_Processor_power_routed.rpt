@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date             : Sun May 18 21:43:31 2025
+| Date             : Mon May 19 01:47:55 2025
 | Host             : CITeS-FOE running 64-bit major release  (build 9200)
 | Command          : report_power -file Nano_Processor_power_routed.rpt -pb Nano_Processor_power_summary_routed.pb -rpx Nano_Processor_power_routed.rpx
 | Design           : Nano_Processor
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.070        |
+| Total On-Chip Power (W)  | 0.091        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.001        |
-| Device Static (W)        | 0.068        |
+| Dynamic (W)              | 0.019        |
+| Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 84.7         |
-| Junction Temperature (C) | 25.3         |
+| Max Ambient (C)          | 84.5         |
+| Junction Temperature (C) | 25.5         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,16 +53,16 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      123 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       40 |     20800 |            0.19 |
-|   Register     |    <0.001 |       54 |     41600 |            0.13 |
-|   CARRY4       |    <0.001 |        8 |      8150 |            0.10 |
+| Slice Logic    |    <0.001 |      104 |       --- |             --- |
+|   LUT as Logic |    <0.001 |       30 |     20800 |            0.14 |
+|   Register     |    <0.001 |       47 |     41600 |            0.11 |
+|   CARRY4       |    <0.001 |        7 |      8150 |            0.09 |
+|   F7/F8 Muxes  |    <0.001 |        1 |     32600 |           <0.01 |
 |   Others       |     0.000 |        6 |       --- |             --- |
-|   F7/F8 Muxes  |     0.000 |        1 |     32600 |           <0.01 |
-| Signals        |    <0.001 |      110 |       --- |             --- |
-| I/O            |    <0.001 |       19 |       106 |           17.92 |
-| Static Power   |     0.068 |          |           |                 |
-| Total          |     0.070 |          |           |                 |
+| Signals        |    <0.001 |       94 |       --- |             --- |
+| I/O            |     0.017 |       19 |       106 |           17.92 |
+| Static Power   |     0.072 |          |           |                 |
+| Total          |     0.091 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,9 +72,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.011 |       0.001 |      0.010 |
-| Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
-| Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
+| Vccint    |       1.000 |     0.011 |       0.002 |      0.010 |
+| Vccaux    |       1.800 |     0.013 |       0.001 |      0.013 |
+| Vcco33    |       3.300 |     0.006 |       0.005 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -141,13 +141,13 @@ Table of Contents
 +-------------------+-----------+
 | Name              | Power (W) |
 +-------------------+-----------+
-| Nano_Processor    |     0.001 |
+| Nano_Processor    |     0.019 |
 |   Program_Counter |    <0.001 |
 |   Register_Bank_0 |    <0.001 |
-|     Reg_1         |     0.000 |
+|     Reg_1         |    <0.001 |
 |     Reg_2         |    <0.001 |
 |     Reg_3         |    <0.001 |
-|     Reg_7         |     0.000 |
+|     Reg_7         |    <0.001 |
 |   Slow_Clk_0      |    <0.001 |
 +-------------------+-----------+
 

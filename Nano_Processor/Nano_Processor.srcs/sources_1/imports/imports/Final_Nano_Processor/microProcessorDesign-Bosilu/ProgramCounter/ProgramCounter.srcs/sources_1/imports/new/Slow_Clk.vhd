@@ -4,7 +4,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx leaf cells in this code.
@@ -21,22 +21,20 @@ end Slow_Clk;
 -- Architecture definition for the behavior of Slow_Clk
 architecture Behavioral of Slow_Clk is
 
-signal count : integer := 1;             -- Counter to control clock toggling
-signal clk_status : STD_LOGIC :='0';     -- Internal signal to hold clock status (high/low)
+     -- 26-bit counter => 2^26 = 67,108,864 (e.g., for 1 Hz from 50 MHz clock)
+    signal counter : unsigned(25 downto 0) := (others => '0');
+    signal clk_div : STD_LOGIC := '0';
 
 begin
 
-    -- Process that runs on every rising edge of Clk_in
-    process (Clk_in) begin
+    process(Clk_in)
+    begin
         if rising_edge(Clk_in) then
-            count <= count+1;            -- Increment the counter
-            if (count = 1) then          -- If counter equals 1 (this condition is always true due to line below)
-                clk_status <= NOT(clk_status);  -- Toggle clk_status signal
-                Clk_out<= clk_status;           -- Assign the toggled signal to output
-                count<= 1;                      -- Reset the counter back to 1
-            end if;
-       end if;
+            counter <= counter + 1;
+            clk_div <= counter(25);  -- Use MSB as divided clock
+        end if;
     end process;
 
-end Behavioral;
+    Clk_out <= clk_div;
 
+end Behavioral;

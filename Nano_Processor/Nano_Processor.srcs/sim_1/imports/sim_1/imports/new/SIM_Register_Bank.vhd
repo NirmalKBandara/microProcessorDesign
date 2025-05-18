@@ -45,14 +45,7 @@ architecture Behavioral of SIM_Register_Bank is
             Clk : in STD_LOGIC;                                   -- Clock input
             D : in STD_LOGIC_VECTOR (3 downto 0);                 -- 4-bit data input
             Res : in STD_LOGIC;                                   -- Reset input
-            Reg_0_out : out STD_LOGIC_VECTOR (3 downto 0);       -- Outputs from each register
-            Reg_1_out : out STD_LOGIC_VECTOR (3 downto 0);
-            Reg_2_out : out STD_LOGIC_VECTOR (3 downto 0);
-            Reg_3_out : out STD_LOGIC_VECTOR (3 downto 0);
-            Reg_4_out : out STD_LOGIC_VECTOR (3 downto 0);
-            Reg_5_out : out STD_LOGIC_VECTOR (3 downto 0);
-            Reg_6_out : out STD_LOGIC_VECTOR (3 downto 0);
-            Reg_7_out : out STD_LOGIC_VECTOR (3 downto 0)
+            Reg_out: out STD_LOGIC_VECTOR(31 downto 0)
         );
     end component;
 
@@ -60,7 +53,7 @@ architecture Behavioral of SIM_Register_Bank is
     signal Reg_EN: STD_LOGIC_VECTOR(2 downto 0);               -- Register enable select
     signal Clk, Res: STD_LOGIC;                                -- Clock and Reset signals
     signal D, Reg_0_out, Reg_1_out, Reg_2_out, Reg_3_out, Reg_4_out, Reg_5_out, Reg_6_out, Reg_7_out: STD_LOGIC_VECTOR(3 downto 0);
-
+    signal Reg_out: STD_LOGIC_VECTOR(31 downto 0);
 begin
 
     -- Instantiate the Unit Under Test (UUT) Register_Bank
@@ -70,14 +63,7 @@ begin
             Clk => Clk,
             D => D,
             Res => Res,
-            Reg_0_out => Reg_0_out,
-            Reg_1_out => Reg_1_out,
-            Reg_2_out => Reg_2_out,
-            Reg_3_out => Reg_3_out,
-            Reg_4_out => Reg_4_out,
-            Reg_5_out => Reg_5_out,
-            Reg_6_out => Reg_6_out,
-            Reg_7_out => Reg_7_out
+            Reg_out => Reg_out
         );
 
     -- Process to drive input stimuli to the Register_Bank

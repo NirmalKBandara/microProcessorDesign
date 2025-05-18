@@ -16,8 +16,7 @@ Compiling package ieee.numeric_std
 Compiling package ieee.std_logic_textio
 Compiling architecture behavioral of entity xil_defaultlib.Slow_Clk [slow_clk_default]
 Compiling architecture behavioral of entity xil_defaultlib.ProgramCounter [programcounter_default]
-Compiling architecture behavioral of entity xil_defaultlib.adder_3bit [adder_3bit_default]
-Compiling architecture behavioral of entity xil_defaultlib.Mux_2_Way_3_Bit [mux_2_way_3_bit_default]
+Compiling architecture behavioral of entity xil_defaultlib.Rom_Address_Select [rom_address_select_default]
 Compiling architecture behavioral of entity xil_defaultlib.program_rom [program_rom_default]
 Compiling architecture behavioral of entity xil_defaultlib.InstructionDecoder [instructiondecoder_default]
 Compiling architecture behavioral of entity xil_defaultlib.Decoder_3_to_8 [decoder_3_to_8_default]

@@ -40,7 +40,6 @@ read_vhdl -library xil_defaultlib {
   {E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Reg.vhd}
   {E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Sineth/Register_Bank/Register_Bank.srcs/sources_1/new/Register_Bank.vhd}
   {E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Bosilu/ProgramCounter/ProgramCounter.srcs/sources_1/imports/new/Slow_Clk.vhd}
-  {E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Hasaranga/adder_3bit/adder_3bit.srcs/sources_1/new/adder_3bit.vhd}
   {E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/imports/Final_Nano_Processor/microProcessorDesign-Hasaranga/program_rom/program_rom.srcs/sources_1/new/program_rom.vhd}
   {E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.srcs/sources_1/imports/new/Nano_Processor.vhd}
 }

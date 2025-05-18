@@ -34,8 +34,8 @@ use IEEE.NUMERIC_STD.ALL;
 -- Entity declaration for a 3-bit adder
 -- It adds 1 to a 3-bit input and provides the result as output
 entity adder_3bit is
-    Port ( INPUT : in STD_LOGIC_VECTOR (2 downto 0);   -- 3-bit input vector
-           OUTPUT : out STD_LOGIC_VECTOR (2 downto 0)  -- 3-bit output vector (result of input + 1)
+    Port ( INPUT : in unsigned (2 downto 0);   -- 3-bit input vector
+           OUTPUT : out unsigned (2 downto 0)  -- 3-bit output vector (result of input + 1)
          );
 end adder_3bit;
 
@@ -47,10 +47,10 @@ signal temp : unsigned(2 downto 0);   -- Temporary signal to hold the intermedia
 begin
 
     -- Convert the input to unsigned, add 1, and assign it to temp
-    temp <= unsigned(INPUT) + 1;
+    temp <= INPUT + 1;
 
     -- Convert the result back to std_logic_vector and assign it to the output
-    OUTPUT <= std_logic_vector(temp);
+    OUTPUT <= temp;
     
 end Behavioral;
 

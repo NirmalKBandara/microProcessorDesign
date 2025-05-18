@@ -24,7 +24,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx leaf cells in this code.
@@ -44,7 +44,7 @@ entity InstructionDecoder is
         ImmediateValue : out STD_LOGIC_VECTOR (3 downto 0);     -- 4-bit immediate value output
         OperationSelect : out STD_LOGIC;                        -- Control signal for operation selection
         JumpFlag: out STD_LOGIC;                                -- Flag indicating if jump instruction is active
-        JumpAddress: out STD_LOGIC_VECTOR(2 downto 0)           -- 3-bit jump address output
+        JumpAddress: out unsigned(2 downto 0)           -- 3-bit jump address output
     );
 end InstructionDecoder;
 
@@ -63,7 +63,7 @@ begin
     RegSelect_A    <= InstructionBus(9 downto 7);
     RegSelect_B    <= InstructionBus(6 downto 4);
     ImmediateValue <= InstructionBus(3 downto 0);
-    JumpAddress    <= InstructionBus(2 downto 0);
+    JumpAddress    <= unsigned(InstructionBus(2 downto 0));
     OperationSelect<= InstructionBus(10);
     LoadSelect     <= not InstructionBus(11);
     JumpFlag       <= '0';

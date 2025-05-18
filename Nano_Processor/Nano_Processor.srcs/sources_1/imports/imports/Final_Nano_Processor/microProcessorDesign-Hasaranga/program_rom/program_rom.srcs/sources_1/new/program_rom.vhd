@@ -25,7 +25,7 @@ use IEEE.numeric_std.all;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx leaf cells in this code.
@@ -36,7 +36,7 @@ use IEEE.numeric_std.all;
 -- Takes a 3-bit address input and outputs a 12-bit instruction
 entity program_rom is
     Port ( 
-        address : in STD_LOGIC_VECTOR (2 downto 0);      -- 3-bit address input
+        address : in unsigned (2 downto 0);      -- 3-bit address input
         instruction : out STD_LOGIC_VECTOR (11 downto 0) -- 12-bit instruction output
     );
 end program_rom;
@@ -61,5 +61,5 @@ architecture Behavioral of program_rom is
 begin
     
     -- Output the instruction at the given address
-    instruction<= ROM(to_integer(unsigned(address)));
+    instruction<= ROM(to_integer(address));
 end Behavioral;
