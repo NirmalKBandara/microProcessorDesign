@@ -28,9 +28,9 @@ use IEEE.NUMERIC_STD.ALL;
 entity Rom_Address_Select is
     Port (
         A : in unsigned(2 downto 0);  -- 3-bit input vector A
-        B : in unsigned (2 downto 0);  -- 3-bit input vector B
-        S : in STD_LOGIC;                      -- 1-bit select signal
-        Y : out unsigned (2 downto 0)  -- 3-bit output vector Y
+        B : in unsigned (2 downto 0); -- 3-bit input vector B
+        S : in STD_LOGIC;             -- 1-bit select signal
+        Y : out unsigned (2 downto 0) -- 3-bit output vector Y
     );
 end Rom_Address_Select;
 
@@ -40,8 +40,8 @@ architecture Behavioral of Rom_Address_Select is
 begin
 
     -- Multiplexer logic:
-    -- If select signal S is '1', output Y gets the value of input A
-    -- If select signal S is '0', output Y gets the value of input B
-    Y <= A when(S='1') else B+1;
+    -- When select signal S = '1', output Y is assigned input A
+    -- When select signal S = '0', output Y is assigned input B incremented by 1
+    Y <= A when (S='1') else B + 1;
 
 end Behavioral;

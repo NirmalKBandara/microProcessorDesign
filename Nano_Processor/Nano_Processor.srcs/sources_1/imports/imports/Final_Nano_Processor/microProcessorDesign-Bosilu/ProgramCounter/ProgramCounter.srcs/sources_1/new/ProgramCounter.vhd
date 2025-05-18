@@ -33,30 +33,31 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity ProgramCounter is
     Port (
-        Clk_in  : in STD_LOGIC;
-        Res     : in STD_LOGIC;
-        NextVal : in UNSIGNED(2 downto 0);  -- Change to UNSIGNED
-        Q       : out UNSIGNED(2 downto 0)
+        Clk_in  : in STD_LOGIC;                    -- Clock input signal
+        Res     : in STD_LOGIC;                    -- Asynchronous reset signal (active high)
+        NextVal : in UNSIGNED(2 downto 0);        -- Next value to be loaded into the counter (3-bit unsigned)
+        Q       : out UNSIGNED(2 downto 0)        -- Current output value of the counter (3-bit unsigned)
     );
 end ProgramCounter;
 
 architecture Behavioral of ProgramCounter is
 
-    signal PC : UNSIGNED(2 downto 0) := (others => '0');
+    -- Internal signal to hold the current count value
+    signal PC : UNSIGNED(2 downto 0) := (others => '0');  -- Initialize PC to 0
 
 begin
 
     process(Clk_in)
     begin
-        if rising_edge(Clk_in) then
-            if Res = '1' then
-                PC <= (others => '0');       -- Reset
+        if rising_edge(Clk_in) then             -- Trigger on the rising edge of the clock
+            if Res = '1' then                   -- If reset is asserted
+                PC <= (others => '0');          -- Reset the program counter to 0
             else
-                PC <= NextVal;               -- Load next value
+                PC <= NextVal;                  -- Otherwise, load the next value into the counter
             end if;
         end if;
     end process;
 
-    Q <= PC;  -- Output
+    Q <= PC;  -- Assign the internal counter value to the output port
 
 end Behavioral;
