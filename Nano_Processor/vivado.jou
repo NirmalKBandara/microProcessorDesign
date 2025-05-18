@@ -2,13 +2,23 @@
 # Vivado v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Fri May 16 23:23:22 2025
-# Process ID: 95836
+# Start of session at: Sun May 18 21:36:07 2025
+# Process ID: 78772
 # Current directory: E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent95468 E:\Vivado project\Final_Nano_Processor\microProcessorDesign\Nano_Processor\Nano_Processor.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16136 E:\Vivado project\Final_Nano_Processor\microProcessorDesign\Nano_Processor\Nano_Processor.xpr
 # Log file: E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/vivado.log
 # Journal file: E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor\vivado.jou
-#-----------------------------------------------------------
-start_gui
+#-----------------------------------------------------------start_gui
 open_project {E:/Vivado project/Final_Nano_Processor/microProcessorDesign/Nano_Processor/Nano_Processor.xpr}
-update_compile_order -fileset sources_1
+uupdate_compile_order -fileset sources_1
+launch_simulation
+source Sim_Nano_Processor.tcl
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+open_run impl_1
+close_sim

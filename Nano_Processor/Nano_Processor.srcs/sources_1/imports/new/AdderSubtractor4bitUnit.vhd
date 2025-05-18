@@ -22,27 +22,34 @@ architecture Behavioral of AdderSubtractor4bitUnit is
     -- Internal signals
     signal A_mod : STD_LOGIC_VECTOR(3 downto 0); -- Modified A input (inverted for subtraction)
     signal B_mod : STD_LOGIC_VECTOR(3 downto 0); -- Modified B input (zero for subtraction)
-    signal S     : STD_LOGIC_VECTOR(4 downto 0); -- Output from RCA_4
-    signal temp_sum : unsigned(4 downto 0);  -- one bit wider to hold carry
+    signal S     : STD_LOGIC_VECTOR(4 downto 0); -- Output from RCA_4, 5 bits to include carry/overflow
+    signal temp_sum : unsigned(4 downto 0);       -- Unsigned 5-bit internal sum to hold carry
 
 begin
 
-    -- If ADD_SUB = '0', perform A + B
-    -- If ADD_SUB = '1', perform (~A + 1) + 0 = -A (2's complement)
+    -- Logic for operand selection:
+    -- If ADD_SUB = '0' ? addition: A_mod = A, B_mod = B
+    -- If ADD_SUB = '1' ? subtraction: A_mod = NOT A (two's complement), B_mod = "0000"
     A_mod <= A when (ADD_SUB = '0') else not(A); -- Invert A for subtraction
-    B_mod <= B when (ADD_SUB = '0') else (others => '0'); -- B is ignored in subtraction
+    B_mod <= B when (ADD_SUB = '0') else (others => '0'); -- Set B to zero in subtraction
 
-    -- Instantiation of the 4-bit Ripple Carry Adder
-    
-    temp_sum <= ('0'& unsigned(A_mod)+ unsigned(B_mod)+("0000" & ADD_SUB));
+    -- Perform the operation:
+    -- For addition: A + B
+    -- For subtraction: NOT A + 0 + 1 (2's complement of A), simulating -A
+    temp_sum <= ('0' & unsigned(A_mod)) + unsigned(B_mod) + ("0000" & ADD_SUB);
+
+    -- Assign calculated value to output signal S
     S <= STD_LOGIC_VECTOR(temp_sum);
-    -- Assign the adder output to RESULT
+
+    -- Set 4-bit RESULT from lower 4 bits of S
     RESULT <= S(3 downto 0);
 
-    -- Set ZERO flag if all bits in the result are '0'
+    -- ZERO flag: '1' if result is all zeros, else '0'
     ZERO <= not (S(0) OR S(1) OR S(2) OR S(3));
 
-    -- Note: C_OUT is declared but not used in this architecture
+    -- Overflow is indicated by the 5th bit (MSB) of the sum
     OVERFLOW <= S(4);
+
+    -- Note: C_OUT is declared in the port but is not assigned or used in this architecture
 
 end Behavioral;

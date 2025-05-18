@@ -38,6 +38,9 @@ architecture Behavioral of Mux_2_Way_3_Bit is
 
 begin
 
+    -- Multiplexer logic:
+    -- If select signal S is '1', output Y gets the value of input A
+    -- If select signal S is '0', output Y gets the value of input B
     Y <= A when(S='1') else B;
 
 end Behavioral;
