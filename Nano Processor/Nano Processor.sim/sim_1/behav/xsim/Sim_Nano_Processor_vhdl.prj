@@ -1,0 +1,19 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Nano Processor.srcs/sources_1/new/AdderSubtractor4bitUnit.vhd" \
+"../../../../Nano Processor.srcs/sources_1/new/Decoder_3_to_8.vhd" \
+"../../../../Nano Processor.srcs/sources_1/new/InstructionDecoder.vhd" \
+"../../../../Nano Processor.srcs/sources_1/new/LUT_16_7.vhd" \
+"../../../../Nano Processor.srcs/sources_1/new/Mux_2_Way_4_Bit.vhd" \
+"../../../../Nano Processor.srcs/sources_1/new/Mux_8_Way_4_Bit.vhd" \
+"../../../../Nano Processor.srcs/sources_1/new/Nano_Processor.vhd" \
+"../../../../Nano Processor.srcs/sources_1/new/ProgramCounter.vhd" \
+"../../../../Nano Processor.srcs/sources_1/new/Reg.vhd" \
+"../../../../Nano Processor.srcs/sources_1/new/Register_Bank.vhd" \
+"../../../../Nano Processor.srcs/sources_1/new/Rom_Address_Select.vhd" \
+"../../../../Nano Processor.srcs/sources_1/new/Slow_Clk.vhd" \
+"../../../../Nano Processor.srcs/sources_1/new/program_rom.vhd" \
+"../../../../Nano Processor.srcs/sim_1/new/Sim_Nano_Processor.vhd" \
+
+# Do not sort compile order
+nosort

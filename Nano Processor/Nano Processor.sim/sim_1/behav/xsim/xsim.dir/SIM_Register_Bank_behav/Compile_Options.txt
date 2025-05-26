@@ -1,0 +1,1 @@
+-wto "4548cbe038d64a90bfa15b5e81212234" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "SIM_Register_Bank_behav" "xil_defaultlib.SIM_Register_Bank" -log "elaborate.log" 
