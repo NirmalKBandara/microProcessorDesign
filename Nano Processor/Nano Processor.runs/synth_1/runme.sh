@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='E:/University Lectures/Computer Organization and Digital Design/CA/Nano Processor/Nano Processor.runs/synth_1'
+HD_PWD='E:/University Lectures/Computer Organization and Digital Design/CA/microProcessorDesign/Nano Processor/Nano Processor.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

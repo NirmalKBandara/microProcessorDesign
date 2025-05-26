@@ -16,34 +16,32 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir {E:/University Lectures/Computer Organization and Digital Design/CA/Nano Processor/Nano Processor.cache/wt} [current_project]
-set_property parent.project_path {E:/University Lectures/Computer Organization and Digital Design/CA/Nano Processor/Nano Processor.xpr} [current_project]
+set_property webtalk.parent_dir {E:/University Lectures/Computer Organization and Digital Design/CA/microProcessorDesign/Nano Processor/Nano Processor.cache/wt} [current_project]
+set_property parent.project_path {E:/University Lectures/Computer Organization and Digital Design/CA/microProcessorDesign/Nano Processor/Nano Processor.xpr} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part digilentinc.com:basys3:part0:1.2 [current_project]
-set_property ip_output_repo {e:/University Lectures/Computer Organization and Digital Design/CA/Nano Processor/Nano Processor.cache/ip} [current_project]
+set_property ip_output_repo {e:/University Lectures/Computer Organization and Digital Design/CA/microProcessorDesign/Nano Processor/Nano Processor.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {
-  {E:/University Lectures/Computer Organization and Digital Design/CA/Nano Processor/Nano Processor.srcs/sources_1/new/AdderSubtractor4bitUnit.vhd}
-  {E:/University Lectures/Computer Organization and Digital Design/CA/Nano Processor/Nano Processor.srcs/sources_1/new/Decoder_3_to_8.vhd}
-  {E:/University Lectures/Computer Organization and Digital Design/CA/Nano Processor/Nano Processor.srcs/sources_1/new/InstructionDecoder.vhd}
-  {E:/University Lectures/Computer Organization and Digital Design/CA/Nano Processor/Nano Processor.srcs/sources_1/new/LUT_16_7.vhd}
-  {E:/University Lectures/Computer Organization and Digital Design/CA/Nano Processor/Nano Processor.srcs/sources_1/new/Mux_2_Way_4_Bit.vhd}
-  {E:/University Lectures/Computer Organization and Digital Design/CA/Nano Processor/Nano Processor.srcs/sources_1/new/Mux_8_Way_4_Bit.vhd}
-  {E:/University Lectures/Computer Organization and Digital Design/CA/Nano Processor/Nano Processor.srcs/sources_1/new/ProgramCounter.vhd}
-  {E:/University Lectures/Computer Organization and Digital Design/CA/Nano Processor/Nano Processor.srcs/sources_1/new/Reg.vhd}
-  {E:/University Lectures/Computer Organization and Digital Design/CA/Nano Processor/Nano Processor.srcs/sources_1/new/Register_Bank.vhd}
-  {E:/University Lectures/Computer Organization and Digital Design/CA/Nano Processor/Nano Processor.srcs/sources_1/new/Rom_Address_Select.vhd}
-  {E:/University Lectures/Computer Organization and Digital Design/CA/Nano Processor/Nano Processor.srcs/sources_1/new/Slow_Clk.vhd}
-  {E:/University Lectures/Computer Organization and Digital Design/CA/Nano Processor/Nano Processor.srcs/sources_1/new/program_rom.vhd}
-  {E:/University Lectures/Computer Organization and Digital Design/CA/Nano Processor/Nano Processor.srcs/sources_1/new/Nano_Processor.vhd}
+  {E:/University Lectures/Computer Organization and Digital Design/CA/microProcessorDesign/Nano Processor/Nano Processor.srcs/sources_1/new/AdderSubtractor4bitUnit.vhd}
+  {E:/University Lectures/Computer Organization and Digital Design/CA/microProcessorDesign/Nano Processor/Nano Processor.srcs/sources_1/new/Decoder_3_to_8.vhd}
+  {E:/University Lectures/Computer Organization and Digital Design/CA/microProcessorDesign/Nano Processor/Nano Processor.srcs/sources_1/new/InstructionDecoder.vhd}
+  {E:/University Lectures/Computer Organization and Digital Design/CA/microProcessorDesign/Nano Processor/Nano Processor.srcs/sources_1/new/LUT_16_7.vhd}
+  {E:/University Lectures/Computer Organization and Digital Design/CA/microProcessorDesign/Nano Processor/Nano Processor.srcs/sources_1/new/Mux_2_Way_4_Bit.vhd}
+  {E:/University Lectures/Computer Organization and Digital Design/CA/microProcessorDesign/Nano Processor/Nano Processor.srcs/sources_1/new/Mux_8_Way_4_Bit.vhd}
+  {E:/University Lectures/Computer Organization and Digital Design/CA/microProcessorDesign/Nano Processor/Nano Processor.srcs/sources_1/new/ProgramCounter.vhd}
+  {E:/University Lectures/Computer Organization and Digital Design/CA/microProcessorDesign/Nano Processor/Nano Processor.srcs/sources_1/new/Reg.vhd}
+  {E:/University Lectures/Computer Organization and Digital Design/CA/microProcessorDesign/Nano Processor/Nano Processor.srcs/sources_1/new/Register_Bank.vhd}
+  {E:/University Lectures/Computer Organization and Digital Design/CA/microProcessorDesign/Nano Processor/Nano Processor.srcs/sources_1/new/Rom_Address_Select.vhd}
+  {E:/University Lectures/Computer Organization and Digital Design/CA/microProcessorDesign/Nano Processor/Nano Processor.srcs/sources_1/new/Slow_Clk.vhd}
+  {E:/University Lectures/Computer Organization and Digital Design/CA/microProcessorDesign/Nano Processor/Nano Processor.srcs/sources_1/new/program_rom.vhd}
+  {E:/University Lectures/Computer Organization and Digital Design/CA/microProcessorDesign/Nano Processor/Nano Processor.srcs/sources_1/new/Nano_Processor.vhd}
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -53,8 +51,8 @@ read_vhdl -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc {{E:/University Lectures/Computer Organization and Digital Design/CA/Nano Processor/Nano Processor.srcs/constrs_1/imports/Basys3Labs.xdc}}
-set_property used_in_implementation false [get_files {{E:/University Lectures/Computer Organization and Digital Design/CA/Nano Processor/Nano Processor.srcs/constrs_1/imports/Basys3Labs.xdc}}]
+read_xdc {{E:/University Lectures/Computer Organization and Digital Design/CA/microProcessorDesign/Nano Processor/Nano Processor.srcs/constrs_1/imports/Basys3Labs.xdc}}
+set_property used_in_implementation false [get_files {{E:/University Lectures/Computer Organization and Digital Design/CA/microProcessorDesign/Nano Processor/Nano Processor.srcs/constrs_1/imports/Basys3Labs.xdc}}]
 
 set_param ips.enableIPCacheLiteLoad 0
 close [open __synthesis_is_running__ w]
